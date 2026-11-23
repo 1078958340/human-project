@@ -1,5 +1,5 @@
 import {createTracker, scanVideo} from '../tracker.mjs';
-import {importProfile, withSensitiveMatching} from './profile.mjs';
+import {withSensitiveMatching} from './profile.mjs';
 import {createRun, readTrajectory} from './recognizer.mjs';
 import {buildStudyLabels, sha256, studyGroups} from './study-exchange.mjs';
 
@@ -15,7 +15,7 @@ function updateMode() {
   const evaluate = el('studyMode').value === 'evaluate';
   el('studyProfileLabel').textContent = evaluate ? '冻结的 A/B/C 实验包' : '本轮示范配置';
   el('studyStart').textContent = evaluate ? '开始评估' : '开始学习';
-  el('studySensitiveRow').hidden = evaluate;
+  el('studyPresetNote').hidden = evaluate;
   el('studyReusedRow').hidden = !evaluate;
 }
 
@@ -135,8 +135,7 @@ form.onsubmit = async event => {
   status('正在读取配置和标注…');
   try {
     const input = await readJson(config);
-    const profile = mode === 'learn' ? (el('studySensitive').checked ? withSensitiveMatching(input) : importProfile(input)) :
-      input?.profiles?.A;
+    const profile = mode === 'learn' ? withSensitiveMatching(input) : input?.profiles?.A;
     if (!profile) throw new Error('请选择网页导出的 A、B、C 实验包。');
     const trajectory = source.name.toLowerCase().endsWith('.json') ? await readJson(source) :
       await captureTrajectory(source, profile, el('studyMirror').checked, controller.signal);

@@ -42,8 +42,8 @@
     },
     {
       "path": "01_code/custom-gestures/index.html",
-      "bytes": 5151,
-      "sha256": "3353eea5299cf1eab53828eece91a4ab4cfa2d2d13eda89d25887846ffa75455"
+      "bytes": 5078,
+      "sha256": "e8a557f603a25db3fd54208e977f080141233c4161ee3a992dc79925d7959d8c"
     },
     {
       "path": "01_code/custom-gestures/profile.mjs",
@@ -82,13 +82,13 @@
     },
     {
       "path": "01_code/custom-gestures/video-study.html",
-      "bytes": 4675,
-      "sha256": "5e7da361fc19fc1ae452c2a13002978ef157553a110e09f8528b556586e6cbd1"
+      "bytes": 4658,
+      "sha256": "d5d7ef1b3537a566252acb32765718844e368e51030749f3c1c68c277e985ca0"
     },
     {
       "path": "01_code/custom-gestures/video-study.mjs",
-      "bytes": 7540,
-      "sha256": "73d99e90df0b3b5d0bfc6be5b5110c822850d790a8e7d236c4f9c45981430ced"
+      "bytes": 7461,
+      "sha256": "d6afd1cb00da4ff55b6de613a00480960f735061de92744ae757bbac5b2b129e"
     },
     {
       "path": "01_code/development-v41/demo.mjs",
@@ -222,8 +222,8 @@
     },
     {
       "path": "04_docs/成员3_校准与实验.md",
-      "bytes": 5451,
-      "sha256": "4f787ec0f91625651fad5bed7a720d7ab2cf7b1e2ede2fa066d916f00c00b088"
+      "bytes": 5440,
+      "sha256": "8925fd0b8fe80b6b3cf82fd49c6659b5fe8128268a4369914c5af2dbbe62089c"
     },
     {
       "path": "AGENTS.md",
@@ -232,8 +232,8 @@
     },
     {
       "path": "README.txt",
-      "bytes": 5030,
-      "sha256": "127a11011e465f390829275fd8327d9b9ce604eb88b3360ae1347512b3ad3113"
+      "bytes": 5036,
+      "sha256": "55675fb9141db1dd885e5cbca6451786d7803d5871794b1fa36fba1c8980c625"
     }
   ]
 }

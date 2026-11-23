@@ -19,7 +19,7 @@
 
 播放器可从 `createTracker` 和 `watchVideo` 得到帧，经 `createRecognizer(profile).push(frame)` 取得手势事件，再将有 `actionId` 的事件交给 `createActionDispatcher`。将 `nextPage` 和 `previousPage` 回调绑定到播放器。若已到首尾页，回调返回 `false` 以记录边界。用 `onEnabledChange` 更新暂停状态。切换来源和退出时释放追踪器与摄像头。
 
-视频学习页使用 `auto-study.mjs` 的 `calibrateStudy` 和 `evaluateStudy`。可以复用现成的 worker 和导出逻辑，由最终界面负责引导用户录制、标注和理解结果。播放器收到判定时可分别记录识别时间、动作执行状态和页面实际呈现时间，便于成员 3 后续评估。[成员 2 的详细接口和代码示例](HAI_Part1交付包_v4.1/04_docs/成员2_接口接入.md)
+视频学习页使用 `auto-study.mjs` 的 `calibrateStudy` 和 `evaluateStudy`。可以复用现成的 worker 和导出逻辑，由最终界面负责引导用户录制、标注和理解结果。新实验先用 `withSensitiveMatching` 给原示范配置应用较灵敏设置，再从这份配置生成 A、B、C。回放沿用实验包内冻结的配置。播放器收到判定时可分别记录识别时间、动作执行状态和页面实际呈现时间，便于成员 3 后续评估。[成员 2 的详细接口和代码示例](HAI_Part1交付包_v4.1/04_docs/成员2_接口接入.md)
 
 ## 后续安排
 

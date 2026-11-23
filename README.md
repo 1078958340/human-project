@@ -13,7 +13,8 @@ Set-Location -LiteralPath "./HAI_Part1交付包_v4.1/01_code"
 
 - [手势注册与识别演示](http://localhost:8766/custom-gestures/index.html)
 - [视频学习与评估](http://localhost:8766/custom-gestures/video-study.html)
-- [历史 4.1 验证页](http://localhost:8766/development-v41/index.html)
+
+网页生成的 A、B、C 统一使用较灵敏设置。回放按实验包内冻结的配置运行。
 
 浏览器运行依赖随仓库提供的 MediaPipe 模型和 WASM。两段历史录屏通过 Git LFS 管理。克隆后如看到录屏指针文件，在仓库根目录运行 `git lfs pull`。
 
