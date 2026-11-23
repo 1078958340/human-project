@@ -1,0 +1,219 @@
+import {dtw} from '../development-v41/recognizer-development.mjs';
+import {actionNames} from './actions.mjs';
+import {coordinateSystem, trackerVersion, featureVersion, archivedTrackerVersions, poseDistance} from './hand-features.mjs';
+import {motionDefaults, gestureTypes, describeClip, clipErrors} from './trajectory.mjs';
+
+export const engineVersion = 'pose-motion-multi-track-v4';
+export const profileVersion = 4;
+export const sensitivePreset = 'channel-sensitive-v1';
+export const defaults = Object.freeze({
+  ...motionDefaults, staticAmbiguityMargin: 0.035, dynamicAmbiguityMargin: 0.070,
+});
+const classDefaults = Object.freeze({
+  static: Object.freeze({threshold: 0.145, negativeMargin: 0.036}),
+  dynamic: Object.freeze({threshold: 0.30, negativeMargin: 0.070}),
+});
+
+const isRecord = value => value !== null && typeof value === 'object' && !Array.isArray(value);
+const hasText = value => typeof value === 'string' && value.trim().length > 0;
+
+export function createProfile(participantId = null) {
+  return {
+    version: profileVersion, engineVersion, trackerVersion, featureVersion, coordinateSystem,
+    participantId, revisionId: crypto.randomUUID(), parentRevisionId: null,
+    settings: {...defaults}, gestures: [], history: [],
+  };
+}
+
+export function reviseProfile(profile, patch, change) {
+  return compileProfile({
+    ...profile, ...patch,
+    parentRevisionId: profile.revisionId, revisionId: crypto.randomUUID(),
+    history: [...profile.history, {
+      ...change, at: new Date().toISOString(), parentRevisionId: profile.revisionId,
+    }],
+  }).profile;
+}
+
+export function createGesture(name, actionId = null, type = 'dynamic') {
+  if (!Object.hasOwn(gestureTypes, type)) throw new Error('请选择有效的手势类型。');
+  return {
+    gestureId: crypto.randomUUID(), name, type, actionId,
+    settings: {...classDefaults[type]}, positives: [], negatives: [],
+  };
+}
+
+function effectiveSettings(overrides, base, label) {
+  if (!isRecord(overrides) || Object.keys(overrides).some(key => !Object.hasOwn(base, key))) {
+    throw new Error(label + '含未知或无效参数。');
+  }
+  const settings = {...base, ...overrides};
+  if (Object.values(settings).some(value => !Number.isFinite(value) || value <= 0)) {
+    throw new Error(label + '参数必须为有限正数。');
+  }
+  return settings;
+}
+
+function compileExamples(examples, type, settings, sampleIds, label) {
+  if (!Array.isArray(examples)) throw new Error(label + '应为数组。');
+  return examples.map(example => {
+    const {sampleId, frames, source, confirmation} = example ?? {};
+    if (!hasText(sampleId) || sampleIds.has(sampleId) || !isRecord(source) ||
+        !hasText(source.runId) || !['camera', 'video', 'replay', 'synthetic'].includes(source.kind) ||
+        !['registration', 'confirmed_review', 'annotated_intent', 'annotated_false_trigger'].includes(confirmation) ||
+        !Array.isArray(frames) || !Number.isFinite(source.startMs) || !Number.isFinite(source.endMs) ||
+        source.startMs !== frames[0]?.tMs || source.endMs !== frames.at(-1)?.tMs) {
+      throw new Error(label + '的样例 ID、来源、时间或确认状态无效。');
+    }
+    const result = describeClip(frames, type, settings);
+    if (!result.feature) throw new Error(label + '的样例无效。' + clipErrors[result.reason]);
+    sampleIds.add(sampleId);
+    return {sampleId, ...result, duration: source.endMs - source.startMs};
+  });
+}
+
+export function compileProfile(input) {
+  if (input?.version === 1) {
+    throw new Error('这是 4.1 配置。请在开发版 4.1 页面加载原配置；新版可另外回放旧 run 的轨迹。');
+  }
+  if ([2, 3].includes(input?.version)) {
+    throw new Error('这是旧配置，请先通过新版页面导入，或用 importProfile 升级。');
+  }
+  if (input?.version !== profileVersion || input.engineVersion !== engineVersion ||
+      input.trackerVersion !== trackerVersion || input.featureVersion !== featureVersion ||
+      input.coordinateSystem !== coordinateSystem) {
+    throw new Error('配置版本不兼容，需要自定义手势 v4 的识别、追踪、特征和坐标版本。');
+  }
+  if (input.matchingPreset !== undefined && input.matchingPreset !== sensitivePreset) {
+    throw new Error('未知的匹配预设。');
+  }
+  if ((input.participantId !== null && !hasText(input.participantId)) ||
+      !hasText(input.revisionId) || (input.parentRevisionId !== null && !hasText(input.parentRevisionId)) ||
+      !Array.isArray(input.history) || !Array.isArray(input.gestures)) {
+    throw new Error('配置缺少参与者字段、修订信息或手势列表。');
+  }
+  const settings = effectiveSettings(input.settings, defaults, '全局');
+  if (settings.maxMs < settings.minMs || settings.quietPalm >= settings.minPalmMotion ||
+      settings.quietPose >= settings.minPoseMotion || settings.releasePose <= settings.quietPose ||
+      settings.staticHoldMs < settings.examplePoseMs) {
+    throw new Error('全局动作时长、静止阈值或手型释放参数无效。');
+  }
+
+  const ids = new Set(), sampleIds = new Set();
+  const classes = input.gestures.map(gesture => {
+    const {gestureId, name, type, actionId} = gesture ?? {};
+    if (!hasText(gestureId) || ids.has(gestureId) || !hasText(name) || !Object.hasOwn(gestureTypes, type) ||
+        (actionId !== null && !Object.hasOwn(actionNames, actionId))) {
+      throw new Error('手势 ID 必须唯一，且名称、手势类型及功能绑定必须有效。');
+    }
+    if (gesture.motionChannel !== undefined && (type !== 'dynamic' || input.matchingPreset !== sensitivePreset ||
+        !['palm', 'pose'].includes(gesture.motionChannel))) {
+      throw new Error('掌心与手型通道需要使用相应的动态匹配预设。');
+    }
+    ids.add(gestureId);
+    const classSettings = effectiveSettings(gesture.settings, classDefaults[type], name + '：');
+    return {
+      gesture: {...gesture, settings: classSettings},
+      positive: compileExamples(gesture.positives, type, settings, sampleIds, name + '正例'),
+      negative: compileExamples(gesture.negatives, type, settings, sampleIds, name + '反例'),
+    };
+  });
+  return {profile: {...input, settings, gestures: classes.map(item => item.gesture)}, classes};
+}
+
+export function importProfile(input) {
+  if (![2, 3].includes(input?.version)) return compileProfile(input).profile;
+  const v2 = input.version === 2;
+  if (input.engineVersion !== (v2 ? 'dtw-custom-v2' : 'pose-knn-motion-dtw-v3') ||
+      input.featureVersion !== (v2 ? 'palm-path-20-v1' : featureVersion) ||
+      input.trackerVersion !== archivedTrackerVersions[v2 ? 0 : 1] || input.coordinateSystem !== coordinateSystem ||
+      !hasText(input.revisionId) || !Array.isArray(input.gestures) ||
+      !Array.isArray(input.history) ||
+      input.gestures.some(gesture => v2 ? gesture?.type !== 'right_hand_dynamic' : !Object.hasOwn(gestureTypes, gesture?.type))) {
+    throw new Error('旧配置缺少原版本信息或示范，无法升级。');
+  }
+  const settings = {...defaults};
+  if (!v2) {
+    Object.assign(settings, input.settings);
+    for (const key of ['maxGapMs', 'quietMs', 'quietPalm', 'quietPose', 'minPalmMotion', 'minPoseMotion', 'staticHoldMs']) {
+      settings[key] = defaults[key];
+    }
+    settings.staticHoldMs = Math.max(settings.staticHoldMs, settings.examplePoseMs);
+  }
+  const versioned = {
+    ...input, version: profileVersion, engineVersion, trackerVersion, featureVersion,
+    settings,
+    gestures: v2 ? input.gestures.map(gesture => ({...gesture, type: 'dynamic', settings: {...classDefaults.dynamic}})) :
+      input.gestures,
+  };
+  return reviseProfile(versioned, {}, {
+    kind: 'migrate_v' + input.version, fromEngineVersion: input.engineVersion, fromFeatureVersion: input.featureVersion,
+    previousSettings: input.settings, previousClassSettings: input.gestures.map(({gestureId, settings}) => ({gestureId, settings})),
+  });
+}
+
+export function createExample(frames, source, confirmation = 'registration') {
+  return {
+    sampleId: crypto.randomUUID(), confirmation,
+    source: {...source, startMs: frames[0].tMs, endMs: frames.at(-1).tMs}, frames,
+  };
+}
+
+export function featureDistance(type, a, b) {
+  return type === 'static' ? poseDistance(a, b) : dtw(a, b);
+}
+
+const projections = new WeakMap();
+function motionProjection(feature, channel) {
+  let cached = projections.get(feature);
+  if (!cached) {
+    cached = {};
+    projections.set(feature, cached);
+  }
+  return cached[channel] ??= feature.map(row => channel === 'pose' ?
+    row.slice(2) : [row[0], row[1], ...row.slice(2).map(value => value * .52)]);
+}
+
+export function matchingDistance(gesture, observed, reference) {
+  const channel = gesture.motionChannel;
+  if (!channel) return featureDistance(gesture.type, observed.feature, reference.feature);
+  const motion = dtw(motionProjection(observed.feature, channel), motionProjection(reference.feature, channel));
+  if (channel === 'palm') return motion;
+  // A closing transition and an opening transition can share intermediate poses.
+  // Both order and the shape at the end contribute to the pose-channel distance.
+  return .78 * motion + .16 * poseDistance(observed.shapeStart, reference.shapeStart) +
+    .34 * poseDistance(observed.shapeEnd, reference.shapeEnd);
+}
+
+export function withSensitiveMatching(input) {
+  const {profile, classes} = compileProfile(importProfile(input));
+  const applied = profile.matchingPreset === sensitivePreset;
+  if (applied && classes.every(({gesture}) => gesture.type === 'static' || gesture.motionChannel)) return profile;
+  const gestures = classes.map(({gesture, positive}) => {
+    const threshold = applied ? gesture.settings.threshold :
+      Math.round((gesture.settings.threshold + (gesture.type === 'static' ? .02 : .055)) * 1000) / 1000;
+    const configured = {...gesture, settings: {...gesture.settings, threshold}};
+    if (gesture.type === 'static' || gesture.motionChannel) return configured;
+    const poseExamples = positive.filter(({extent}) =>
+      extent.pose / profile.settings.minPoseMotion > 1.2 * extent.palm / profile.settings.minPalmMotion).length;
+    return {...configured, motionChannel: poseExamples > positive.length / 2 ? 'pose' : 'palm'};
+  });
+  return reviseProfile(profile, {matchingPreset: sensitivePreset, gestures}, {
+    kind: 'matching_preset', preset: sensitivePreset,
+    sourceThresholds: profile.gestures.map(({gestureId, settings}) => ({gestureId, threshold: settings.threshold})),
+  });
+}
+
+export function findSimilarClasses(profile, gestureId, frames) {
+  const {profile: effective, classes} = compileProfile(profile);
+  const current = effective.gestures.find(gesture => gesture.gestureId === gestureId);
+  if (!current) throw new Error('请选择手势。');
+  const observed = describeClip(frames, current.type, effective.settings);
+  if (!observed.feature) throw new Error(clipErrors[observed.reason]);
+  const margin = current.type === 'static' ? effective.settings.staticAmbiguityMargin : effective.settings.dynamicAmbiguityMargin;
+  return classes.filter(({gesture, positive}) => gesture.gestureId !== gestureId && gesture.type === current.type &&
+    positive.some(template => matchingDistance(current, observed, template) <= Math.max(margin,
+      Math.min(current.settings.threshold, gesture.settings.threshold) * 0.6)))
+    .map(({gesture}) => gesture.name);
+}
+

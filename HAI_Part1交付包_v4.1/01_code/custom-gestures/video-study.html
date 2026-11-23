@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Human Project · 视频学习与评估</title>
+  <link rel="stylesheet" href="./styles.css">
+  <style>
+    .study-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 21rem), 1fr)); }
+    .study-controls { margin-top: 1rem; }
+    .study-controls label { display: block; margin: .75rem 0; }
+    .study-controls input[type=file], .study-controls textarea, .study-controls select { display: block; width: 100%; max-width: 100%; margin-top: .3rem; }
+    .study-controls input[type=checkbox] { vertical-align: middle; }
+    .study-controls textarea { font: inherit; resize: vertical; min-height: 7rem; padding: .6rem; box-sizing: border-box; }
+    #studyPreview { display: block; width: 100%; max-height: 22rem; margin: .75rem 0; }
+    #studyPreview[hidden], #studyResult[hidden], .study-controls label[hidden] { display: none; }
+    #studyProgress { margin: 1rem 0; }
+    .results-scroll { overflow-x: auto; }
+    .study-table { border-collapse: collapse; width: 100%; }
+    .study-table th, .study-table td { padding: .6rem .75rem; text-align: left; border-bottom: 1px solid #d9e1dd; white-space: nowrap; }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="heading">
+      <div>
+        <h1>视频学习与评估</h1>
+        <p>用同一段视频对比原示范、补正例和补反例后的表现。</p>
+      </div>
+      <a href="./index.html">回到手势注册</a>
+    </header>
+    <form id="studyForm" class="study-controls">
+      <div class="study-grid">
+        <section aria-labelledby="studyInputTitle">
+          <h2 id="studyInputTitle">选择模式和视频</h2>
+          <label>模式
+            <select id="studyMode">
+              <option value="learn">学习并生成 A、B、C</option>
+              <option value="evaluate">回放已冻结的实验包</option>
+            </select>
+          </label>
+          <label><span id="studyProfileLabel">本轮示范配置</span>
+            <input type="file" id="studyProfile" accept=".json,application/json" required>
+          </label>
+          <label id="studySensitiveRow"><input type="checkbox" id="studySensitive" checked> 使用较灵敏设置</label>
+          <label>原视频或已提取的轨迹
+            <input type="file" id="studySource" accept="video/*,.mp4,.mov,.webm,.json" required>
+          </label>
+          <label id="studyMirrorRow"><input type="checkbox" id="studyMirror"> 原视频画面已经镜像</label>
+          <video id="studyPreview" controls muted playsinline preload="metadata" hidden aria-label="标注用视频预览"></video>
+        </section>
+        <section aria-labelledby="studyLabelTitle">
+          <h2 id="studyLabelTitle">标注有意手势</h2>
+          <label for="studyAnnotations">每行填写开始秒数、结束秒数和手势名称</label>
+          <textarea id="studyAnnotations" placeholder="9.42 10.20 右滑&#10;32.60 33.68 右滑"></textarea>
+          <p class="hint">只有自然动作时填写「无指令」。也可以导入已核对的标注。</p>
+          <label>标注 JSON（可选）<input type="file" id="studyLabels" accept=".json,application/json"></label>
+          <label id="studyReusedRow" hidden><input type="checkbox" id="studyReused"> 这段视频已在以前的评估中使用，标为复测</label>
+          <div class="row">
+            <button type="submit" class="primary" id="studyStart">开始学习</button>
+            <button type="button" id="studyCancel" disabled>取消</button>
+          </div>
+          <p id="studyProgress" role="status" aria-live="polite">请选择配置和视频，并填写标注。</p>
+        </section>
+      </div>
+    </form>
+    <section id="studyResult" aria-labelledby="studyResultTitle" hidden>
+      <h2 id="studyResultTitle">运行结果</h2>
+      <p id="studyResultNote"></p>
+      <div class="results-scroll">
+        <table class="study-table">
+          <thead><tr><th scope="col">配置</th><th scope="col">命中</th><th scope="col">漏检</th><th scope="col">错类</th><th scope="col">重复</th><th scope="col">非意图触发</th></tr></thead>
+          <tbody id="studyRows"></tbody>
+        </table>
+      </div>
+      <div class="row">
+        <button id="studyDownloadC" hidden>下载 C 配置</button>
+        <button id="studyDownloadBundle" hidden>下载 A/B/C 实验包</button>
+        <button id="studyDownloadReport">下载结果 JSON</button>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="./video-study.mjs"></script>
+</body>
+</html>

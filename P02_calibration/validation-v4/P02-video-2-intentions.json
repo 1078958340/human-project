@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "timeline": "media-ms",
+  "complete": true,
+  "stage": "validation",
+  "runId": "50c2deac-1d27-4c90-a74d-5e8fcbcacee2",
+  "participantId": "P02",
+  "sourceAnnotation": "24s和47s 分别右滑 31s握拳 39s张手",
+  "alignmentMethod": "在运行冻结配置之前，根据用户提供的粗时间逐帧核对对应手势，保留原始秒数。",
+  "rawVideo": {
+    "file": "d1a60c9b224d7198855684871b6a8173.mp4",
+    "offsetMs": 0,
+    "sha256": "b84e6e7d4b551b53cdb61aeab174e1da1547415438640265a9a3c0229e4cf823"
+  },
+  "task": {
+    "kind": "mixed",
+    "startMs": 0,
+    "endMs": 54768
+  },
+  "intentions": [
+    {
+      "intentId": "P02-V2-01",
+      "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+      "actionId": "next_page",
+      "name": "右滑",
+      "notedMs": [
+        24000
+      ],
+      "startMs": 23900,
+      "endMs": 24720
+    },
+    {
+      "intentId": "P02-V2-02",
+      "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+      "actionId": "toggle_gesture_control",
+      "name": "握拳",
+      "notedMs": [
+        31000
+      ],
+      "startMs": 30930,
+      "endMs": 31980
+    },
+    {
+      "intentId": "P02-V2-03",
+      "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+      "actionId": "previous_page",
+      "name": "张手",
+      "notedMs": [
+        39000
+      ],
+      "startMs": 39200,
+      "endMs": 39920
+    },
+    {
+      "intentId": "P02-V2-04",
+      "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+      "actionId": "next_page",
+      "name": "右滑",
+      "notedMs": [
+        47000
+      ],
+      "startMs": 46620,
+      "endMs": 47480
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import {replay} from './development-v41/recognizer-development.mjs';
+const [profilePath, runPath, outputPath] = process.argv.slice(2);
+if (!outputPath) throw new Error('Usage: node replay-run.mjs profile.json run.json NEW-output.json');
+const read = p => JSON.parse(fs.readFileSync(p,'utf8').replace(/^\uFEFF/,''));
+const profile = read(profilePath), data = read(runPath);
+if (profile.coordinateSystem !== 'body-right-v1' || data.trackerVersion !== 'right-hand-v4') throw new Error('Require body-right-v1 profile and right-hand-v4 trajectory');
+const events = replay(data.frames, profile);
+const output = {version:1,engineVersion:'dtw-v4.1-development',trackerVersion:'right-hand-v4',mode:profile.mode,profile,frames:data.frames,events,replayProvenance:{inputRun:runPath,inputProfile:profilePath,note:'Current-engine replay only; annotate intention separately.'}};
+fs.writeFileSync(outputPath,JSON.stringify(output,null,2),{encoding:'utf8',flag:'wx'});
+console.log(JSON.stringify({outputPath,eventCount:events.length,eventTimesSec:events.map(e=>e.tMs/1000)}));

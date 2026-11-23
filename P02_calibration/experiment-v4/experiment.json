@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "participantId": "P02",
+  "calibrationVideoSha256": "0f958ad944642286aa17141ef03a020311859b45f10a04d184ecaa6a00179589",
+  "calibrationRunId": "82009361-8e13-41ee-86f5-4e0ee225ff36",
+  "tolerance": {
+    "earlyMs": 100,
+    "lateMs": 350
+  },
+  "profiles": {
+    "A": {
+      "file": "A-profile-v4.json",
+      "revisionId": "3f6f3cf6-1a36-4272-bb7b-8cb770e8b6c9",
+      "sha256": "2f81896879f35fc63311001bc24a84df88c96cc51bed7c9f780a3600b04de5a5"
+    },
+    "B": {
+      "file": "B-profile-v4.json",
+      "revisionId": "b2b6e7eb-927d-4e4f-89a7-8d3c41b1bcb4",
+      "sha256": "dbc707d958795549ee45268935eb478c528a726ba5bf775c73b9838f35643212"
+    },
+    "C": {
+      "file": "C-profile-v4.json",
+      "revisionId": "360b08a9-710c-4cda-80fa-7d8393181c76",
+      "sha256": "8ccc1b70accf65031a06684ba4f2c5cc4caa9365417e3f7ceee58631a2315b9d"
+    }
+  }
+}

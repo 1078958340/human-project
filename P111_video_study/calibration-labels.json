@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "timeline": "media-ms",
+  "complete": true,
+  "stage": "calibration",
+  "runId": "82009361-8e13-41ee-86f5-4e0ee225ff36",
+  "participantId": "P111",
+  "sourceAnnotation": "视频9-10s 和 32s分别有一个右滑动作 13s和20s分别有一个握拳动作 28s有一个张手动作",
+  "rawVideo": {
+    "file": "f1ea6f7f86224b25faecd44633873d9f.mp4",
+    "offsetMs": 0,
+    "sha256": "0f958ad944642286aa17141ef03a020311859b45f10a04d184ecaa6a00179589"
+  },
+  "task": {
+    "kind": "mixed",
+    "startMs": 0,
+    "endMs": 39068
+  },
+  "intentions": [
+    {
+      "intentId": "P02-CAL-01",
+      "gestureId": "277d62fe-6f95-483a-8e7e-c7617f59978e",
+      "actionId": null,
+      "name": "右滑",
+      "notedMs": [
+        9000,
+        10000
+      ],
+      "startMs": 9420,
+      "endMs": 10200,
+      "sampleStartMs": 9420,
+      "sampleEndMs": 9980,
+      "activeHandHint": {
+        "atMs": 9800,
+        "imageX": 0.74
+      }
+    },
+    {
+      "intentId": "P02-CAL-02",
+      "gestureId": "39460e56-4220-43a7-8978-e067da764482",
+      "actionId": null,
+      "name": "握拳",
+      "notedMs": [
+        13000
+      ],
+      "startMs": 13650,
+      "endMs": 14550,
+      "sampleStartMs": 13700,
+      "sampleEndMs": 14450,
+      "activeHandHint": {
+        "atMs": 14030,
+        "imageX": 0.64
+      }
+    },
+    {
+      "intentId": "P02-CAL-03",
+      "gestureId": "39460e56-4220-43a7-8978-e067da764482",
+      "actionId": null,
+      "name": "握拳",
+      "notedMs": [
+        20000
+      ],
+      "startMs": 20220,
+      "endMs": 21150,
+      "sampleStartMs": 20300,
+      "sampleEndMs": 21080,
+      "activeHandHint": {
+        "atMs": 20830,
+        "imageX": 0.65
+      }
+    },
+    {
+      "intentId": "P02-CAL-05",
+      "gestureId": "277d62fe-6f95-483a-8e7e-c7617f59978e",
+      "actionId": null,
+      "name": "右滑",
+      "notedMs": [
+        32000
+      ],
+      "startMs": 32600,
+      "endMs": 33680,
+      "sampleStartMs": 32820,
+      "sampleEndMs": 33540,
+      "activeHandHint": {
+        "atMs": 33335,
+        "imageX": 0.789
+      }
+    }
+  ],
+  "sourceParticipantId": "P02",
+  "datasetScope": "reused_calibration",
+  "excluded": [
+    {
+      "name": "张手",
+      "notedMs": [
+        28000
+      ],
+      "startMs": 27600,
+      "endMs": 28620,
+      "reason": "当前配置没有该动作的示范"
+    }
+  ],
+  "annotationNote": "沿用原视频实做动作与已核对时间。参与者字段指本轮配置编号，sourceParticipantId 保留原标注编号。当前配置未注册的张手不计作合手。"
+}

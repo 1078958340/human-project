@@ -1,0 +1,4751 @@
+{
+  "stage": "calibration",
+  "source": {
+    "kind": "video",
+    "name": "f1ea6f7f86224b25faecd44633873d9f.mp4",
+    "sourceMirrored": true,
+    "sha256": "0f958ad944642286aa17141ef03a020311859b45f10a04d184ecaa6a00179589",
+    "framesPerSecond": 29.998721282127786,
+    "extractor": "MediaPipe 0.10.35 / OpenCV 4.13.0",
+    "modelSha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1"
+  },
+  "runId": "82009361-8e13-41ee-86f5-4e0ee225ff36",
+  "labels": {
+    "version": 1,
+    "timeline": "media-ms",
+    "complete": true,
+    "stage": "calibration",
+    "runId": "82009361-8e13-41ee-86f5-4e0ee225ff36",
+    "participantId": "P02",
+    "sourceAnnotation": "视频9-10s 和 32s分别有一个右滑动作 13s和20s分别有一个握拳动作 28s有一个张手动作",
+    "rawVideo": {
+      "file": "f1ea6f7f86224b25faecd44633873d9f.mp4",
+      "offsetMs": 0,
+      "sha256": "0f958ad944642286aa17141ef03a020311859b45f10a04d184ecaa6a00179589"
+    },
+    "task": {
+      "kind": "mixed",
+      "startMs": 0,
+      "endMs": 39068
+    },
+    "intentions": [
+      {
+        "intentId": "P02-CAL-01",
+        "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+        "actionId": "next_page",
+        "name": "右滑",
+        "notedMs": [
+          9000,
+          10000
+        ],
+        "startMs": 9420,
+        "endMs": 10200,
+        "sampleStartMs": 9420,
+        "sampleEndMs": 9980,
+        "activeHandHint": {
+          "atMs": 9800,
+          "imageX": 0.74
+        }
+      },
+      {
+        "intentId": "P02-CAL-02",
+        "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+        "actionId": "toggle_gesture_control",
+        "name": "握拳",
+        "notedMs": [
+          13000
+        ],
+        "startMs": 13650,
+        "endMs": 14550,
+        "sampleStartMs": 13700,
+        "sampleEndMs": 14450,
+        "activeHandHint": {
+          "atMs": 14030,
+          "imageX": 0.64
+        }
+      },
+      {
+        "intentId": "P02-CAL-03",
+        "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+        "actionId": "toggle_gesture_control",
+        "name": "握拳",
+        "notedMs": [
+          20000
+        ],
+        "startMs": 20220,
+        "endMs": 21150,
+        "sampleStartMs": 20300,
+        "sampleEndMs": 21080,
+        "activeHandHint": {
+          "atMs": 20830,
+          "imageX": 0.65
+        }
+      },
+      {
+        "intentId": "P02-CAL-04",
+        "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+        "actionId": "previous_page",
+        "name": "张手",
+        "notedMs": [
+          28000
+        ],
+        "startMs": 27600,
+        "endMs": 28620,
+        "sampleStartMs": 27650,
+        "sampleEndMs": 28300,
+        "activeHandHint": {
+          "atMs": 28068,
+          "imageX": 0.606
+        }
+      },
+      {
+        "intentId": "P02-CAL-05",
+        "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+        "actionId": "next_page",
+        "name": "右滑",
+        "notedMs": [
+          32000
+        ],
+        "startMs": 32600,
+        "endMs": 33680,
+        "sampleStartMs": 32820,
+        "sampleEndMs": 33540,
+        "activeHandHint": {
+          "atMs": 33335,
+          "imageX": 0.789
+        }
+      }
+    ]
+  },
+  "experiment": {
+    "version": 1,
+    "participantId": "P02",
+    "calibrationVideoSha256": "0f958ad944642286aa17141ef03a020311859b45f10a04d184ecaa6a00179589",
+    "calibrationRunId": "82009361-8e13-41ee-86f5-4e0ee225ff36",
+    "tolerance": {
+      "earlyMs": 100,
+      "lateMs": 350
+    },
+    "profiles": {
+      "A": {
+        "file": "A-profile-v4.json",
+        "revisionId": "3f6f3cf6-1a36-4272-bb7b-8cb770e8b6c9",
+        "sha256": "2f81896879f35fc63311001bc24a84df88c96cc51bed7c9f780a3600b04de5a5"
+      },
+      "B": {
+        "file": "B-profile-v4.json",
+        "revisionId": "b2b6e7eb-927d-4e4f-89a7-8d3c41b1bcb4",
+        "sha256": "dbc707d958795549ee45268935eb478c528a726ba5bf775c73b9838f35643212"
+      },
+      "C": {
+        "file": "C-profile-v4.json",
+        "revisionId": "360b08a9-710c-4cda-80fa-7d8393181c76",
+        "sha256": "8ccc1b70accf65031a06684ba4f2c5cc4caa9365417e3f7ceee58631a2315b9d"
+      }
+    }
+  },
+  "profiles": {
+    "A": {
+      "profileRevisionId": "3f6f3cf6-1a36-4272-bb7b-8cb770e8b6c9",
+      "metrics": {
+        "intended": 5,
+        "correct": 2,
+        "missed": 3,
+        "wrongClass": 0,
+        "wrongAction": 0,
+        "duplicate": 0,
+        "falseTrigger": 0,
+        "totalTriggers": 2,
+        "rejectionReasons": {
+          "tracking_gap": 14,
+          "too_long": 7,
+          "unknown": 38,
+          "too_short": 7,
+          "pose_not_steady": 1
+        }
+      },
+      "events": [
+        {
+          "gestureType": "dynamic",
+          "tMs": 9700,
+          "startMs": 9500,
+          "endMs": 9700,
+          "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+          "gestureName": "右滑",
+          "positiveDistance": 0.20314416590289627,
+          "negativeDistance": null,
+          "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+          "negativeSampleId": null,
+          "withinThreshold": true,
+          "blockedByNegative": false,
+          "actionId": "next_page",
+          "distanceMetric": "motion_dtw",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.20314416590289627,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": true,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": null,
+              "negativeDistance": null,
+              "positiveSampleId": null,
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "completion": "rolling_match",
+          "handTrackId": "hand-3",
+          "side": "Right"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 33135,
+          "startMs": 32868,
+          "endMs": 33135,
+          "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+          "gestureName": "右滑",
+          "positiveDistance": 0.186662583664051,
+          "negativeDistance": null,
+          "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+          "negativeSampleId": null,
+          "withinThreshold": true,
+          "blockedByNegative": false,
+          "actionId": "next_page",
+          "distanceMetric": "motion_dtw",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.186662583664051,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": true,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": null,
+              "negativeDistance": null,
+              "positiveSampleId": null,
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "completion": "rolling_match",
+          "handTrackId": "hand-14",
+          "side": "Right"
+        }
+      ],
+      "rejections": [
+        {
+          "gestureType": "dynamic",
+          "tMs": 1167,
+          "startMs": 500,
+          "endMs": 900,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-1"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 3500,
+          "startMs": 1667,
+          "endMs": 3233,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-4"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 3967,
+          "startMs": 633,
+          "endMs": 3834,
+          "reason": "too_long",
+          "scores": [],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 5267,
+          "startMs": 3967,
+          "endMs": 5134,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.9759465312936279,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 1.1969261273747185,
+              "negativeDistance": null,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 6400,
+          "startMs": 5300,
+          "endMs": 6267,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.789367882849993,
+              "negativeDistance": null,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.938605912093222,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 7400,
+          "startMs": 4100,
+          "endMs": 7267,
+          "reason": "too_long",
+          "scores": [],
+          "handTrackId": "hand-5"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 7667,
+          "startMs": 7467,
+          "endMs": 7534,
+          "reason": "too_short",
+          "scores": [],
+          "handTrackId": "hand-5"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 9300,
+          "startMs": 7667,
+          "endMs": 9034,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-5"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 9434,
+          "startMs": 6400,
+          "endMs": 9300,
+          "reason": "too_long",
+          "scores": [],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 10200,
+          "startMs": 10000,
+          "endMs": 10067,
+          "reason": "too_short",
+          "scores": [],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 11134,
+          "startMs": 10667,
+          "endMs": 10867,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-6"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 11934,
+          "startMs": 10267,
+          "endMs": 11801,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 1.1052557545147301,
+              "negativeDistance": null,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 1.3050969248853854,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 11967,
+          "startMs": 11767,
+          "endMs": 11967,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.866769641001684,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 12301,
+          "startMs": 12101,
+          "endMs": 12167,
+          "reason": "too_short",
+          "scores": [],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 12367,
+          "startMs": 12167,
+          "endMs": 12367,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.8440781599106565,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 12934,
+          "startMs": 11534,
+          "endMs": 12801,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 1.124418840269687,
+              "negativeDistance": null,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 1.133531043281244,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 13001,
+          "startMs": 12801,
+          "endMs": 13001,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.3231162441182255,
+              "negativeDistance": null,
+              "positiveSampleId": "9eed43b8-71cf-49c2-9cd3-98087de59078",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 13201,
+          "startMs": 13001,
+          "endMs": 13067,
+          "reason": "too_short",
+          "scores": [],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 14101,
+          "startMs": 12334,
+          "endMs": 13967,
+          "reason": "too_long",
+          "scores": [],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 14134,
+          "startMs": 13201,
+          "endMs": 14001,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.9860247046213386,
+              "negativeDistance": null,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 1.1657927917697413,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 14134,
+          "startMs": 13934,
+          "endMs": 14134,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.21636914366670487,
+              "negativeDistance": null,
+              "positiveSampleId": "9eed43b8-71cf-49c2-9cd3-98087de59078",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 14167,
+          "startMs": 13967,
+          "endMs": 14167,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.393737376499938,
+              "negativeDistance": null,
+              "positiveSampleId": "9eed43b8-71cf-49c2-9cd3-98087de59078",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 15301,
+          "startMs": 14267,
+          "endMs": 15167,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.9456884273033654,
+              "negativeDistance": null,
+              "positiveSampleId": "fd23a62e-a52f-4521-9cf1-5a5febc7bdeb",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 1.0454092068708238,
+              "negativeDistance": null,
+              "positiveSampleId": "11c4a9c6-c4d7-40e5-92b9-9d7b09be0062",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 15367,
+          "startMs": 15167,
+          "endMs": 15367,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.3375320514821379,
+              "negativeDistance": null,
+              "positiveSampleId": "9eed43b8-71cf-49c2-9cd3-98087de59078",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 15634,
+          "startMs": 14234,
+          "endMs": 15367,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 16434,
+          "startMs": 15867,
+          "endMs": 16301,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.6437800902576025,
+              "negativeDistance": null,
+              "positiveSampleId": "fd23a62e-a52f-4521-9cf1-5a5febc7bdeb",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.8518578211911971,
+              "negativeDistance": null,
+              "positiveSampleId": "92911dbc-e8e7-42bd-b2bc-f661fc3a43e7",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-8"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 16534,
+          "startMs": 15567,
+          "endMs": 16401,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.7624149154387578,
+              "negativeDistance": null,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 1.1854147525103593,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 16567,
+          "startMs": 16367,
+          "endMs": 16567,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.7237048892498881,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-8"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 16601,
+          "startMs": 16401,
+          "endMs": 16601,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.9960102353044564,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 17167,
+          "startMs": 16867,
+          "endMs": 17034,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.46405737347678516,
+              "negativeDistance": null,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.60559784720876,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-8"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 17234,
+          "startMs": 17034,
+          "endMs": 17234,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.8507289307917877,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-8"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 20234,
+          "startMs": 18567,
+          "endMs": 19968,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-9"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 20834,
+          "startMs": 17234,
+          "endMs": 20701,
+          "reason": "too_long",
+          "scores": [],
+          "handTrackId": "hand-8"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 20868,
+          "startMs": 20668,
+          "endMs": 20868,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.20143962409615632,
+              "negativeDistance": null,
+              "positiveSampleId": "9eed43b8-71cf-49c2-9cd3-98087de59078",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-8"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 21868,
+          "startMs": 21568,
+          "endMs": 21601,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-11"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 22834,
+          "startMs": 20968,
+          "endMs": 22568,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-8"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 25301,
+          "startMs": 23001,
+          "endMs": 25168,
+          "reason": "too_long",
+          "scores": [],
+          "handTrackId": "hand-15"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 25368,
+          "startMs": 25168,
+          "endMs": 25368,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.7050404973908666,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-15"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 25901,
+          "startMs": 25701,
+          "endMs": 25768,
+          "reason": "too_short",
+          "scores": [],
+          "handTrackId": "hand-15"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 25934,
+          "startMs": 25734,
+          "endMs": 25934,
+          "reason": "pose_not_steady",
+          "scores": [],
+          "handTrackId": "hand-15"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 27868,
+          "startMs": 26101,
+          "endMs": 27601,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-15"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 28301,
+          "startMs": 22668,
+          "endMs": 28168,
+          "reason": "too_long",
+          "scores": [],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 28335,
+          "startMs": 28135,
+          "endMs": 28335,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.8064440885207209,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 28768,
+          "startMs": 28435,
+          "endMs": 28635,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.7249503253740315,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 1.0401653117769163,
+              "negativeDistance": null,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 28835,
+          "startMs": 28635,
+          "endMs": 28835,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.30394195851354,
+              "negativeDistance": null,
+              "positiveSampleId": "9eed43b8-71cf-49c2-9cd3-98087de59078",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 29801,
+          "startMs": 29468,
+          "endMs": 29535,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-16"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 29868,
+          "startMs": 28901,
+          "endMs": 29735,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.6598661703106996,
+              "negativeDistance": null,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 1.0546818800942916,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 29935,
+          "startMs": 29735,
+          "endMs": 29935,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.48377756620201556,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 30101,
+          "startMs": 29901,
+          "endMs": 29968,
+          "reason": "too_short",
+          "scores": [],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 30835,
+          "startMs": 30135,
+          "endMs": 30701,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.9418919240323409,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 1.016575225385373,
+              "negativeDistance": null,
+              "positiveSampleId": "11c4a9c6-c4d7-40e5-92b9-9d7b09be0062",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 31201,
+          "startMs": 30901,
+          "endMs": 31068,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.4561453658408943,
+              "negativeDistance": null,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.4636045070206659,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 31335,
+          "startMs": 31135,
+          "endMs": 31335,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.6422682282847316,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 31568,
+          "startMs": 31368,
+          "endMs": 31568,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.654082758675823,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 31968,
+          "startMs": 31735,
+          "endMs": 31835,
+          "reason": "too_short",
+          "scores": [],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 32035,
+          "startMs": 31835,
+          "endMs": 32035,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.7262692189964379,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 33235,
+          "startMs": 32535,
+          "endMs": 33101,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 1.0214722009535828,
+              "negativeDistance": null,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 1.1295182781591446,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-17"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 33301,
+          "startMs": 33101,
+          "endMs": 33301,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.4444609206075534,
+              "negativeDistance": null,
+              "positiveSampleId": "9eed43b8-71cf-49c2-9cd3-98087de59078",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-17"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 34435,
+          "startMs": 33501,
+          "endMs": 34101,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-17"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 34468,
+          "startMs": 34135,
+          "endMs": 34335,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.5133094206028829,
+              "negativeDistance": null,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.618886983299074,
+              "negativeDistance": null,
+              "positiveSampleId": "fd23a62e-a52f-4521-9cf1-5a5febc7bdeb",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 35068,
+          "startMs": 34535,
+          "endMs": 34935,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.51491888488954,
+              "negativeDistance": null,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.7807056909803913,
+              "negativeDistance": null,
+              "positiveSampleId": "fd23a62e-a52f-4521-9cf1-5a5febc7bdeb",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 35068,
+          "startMs": 34501,
+          "endMs": 34801,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-17"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 35102,
+          "startMs": 34901,
+          "endMs": 35102,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.689894073384796,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 36035,
+          "startMs": 35568,
+          "endMs": 35902,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.6929595914106943,
+              "negativeDistance": null,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.9747181535991049,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-17"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 36068,
+          "startMs": 35068,
+          "endMs": 35935,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.5674784860721908,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.902902439916622,
+              "negativeDistance": null,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 36068,
+          "startMs": 35868,
+          "endMs": 36068,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.533996342493048,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-17"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 38502,
+          "startMs": 38135,
+          "endMs": 38235,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-18"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 38535,
+          "startMs": 36068,
+          "endMs": 38268,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-14"
+        }
+      ],
+      "matched": [
+        {
+          "intentId": "P02-CAL-01",
+          "eventIndex": 0
+        },
+        {
+          "intentId": "P02-CAL-05",
+          "eventIndex": 1
+        }
+      ],
+      "errors": [
+        {
+          "reviewId": "[\"missed\",\"P02-CAL-02\",null]",
+          "kind": "missed",
+          "intent": {
+            "intentId": "P02-CAL-02",
+            "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+            "actionId": "toggle_gesture_control",
+            "name": "握拳",
+            "notedMs": [
+              13000
+            ],
+            "startMs": 13650,
+            "endMs": 14550,
+            "sampleStartMs": 13700,
+            "sampleEndMs": 14450,
+            "activeHandHint": {
+              "atMs": 14030,
+              "imageX": 0.64
+            }
+          },
+          "eventIndex": null,
+          "event": null
+        },
+        {
+          "reviewId": "[\"missed\",\"P02-CAL-03\",null]",
+          "kind": "missed",
+          "intent": {
+            "intentId": "P02-CAL-03",
+            "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+            "actionId": "toggle_gesture_control",
+            "name": "握拳",
+            "notedMs": [
+              20000
+            ],
+            "startMs": 20220,
+            "endMs": 21150,
+            "sampleStartMs": 20300,
+            "sampleEndMs": 21080,
+            "activeHandHint": {
+              "atMs": 20830,
+              "imageX": 0.65
+            }
+          },
+          "eventIndex": null,
+          "event": null
+        },
+        {
+          "reviewId": "[\"missed\",\"P02-CAL-04\",null]",
+          "kind": "missed",
+          "intent": {
+            "intentId": "P02-CAL-04",
+            "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+            "actionId": "previous_page",
+            "name": "张手",
+            "notedMs": [
+              28000
+            ],
+            "startMs": 27600,
+            "endMs": 28620,
+            "sampleStartMs": 27650,
+            "sampleEndMs": 28300,
+            "activeHandHint": {
+              "atMs": 28068,
+              "imageX": 0.606
+            }
+          },
+          "eventIndex": null,
+          "event": null
+        }
+      ]
+    },
+    "B": {
+      "profileRevisionId": "b2b6e7eb-927d-4e4f-89a7-8d3c41b1bcb4",
+      "metrics": {
+        "intended": 5,
+        "correct": 4,
+        "missed": 1,
+        "wrongClass": 0,
+        "wrongAction": 0,
+        "duplicate": 0,
+        "falseTrigger": 8,
+        "totalTriggers": 12,
+        "rejectionReasons": {
+          "tracking_gap": 12,
+          "too_long": 6,
+          "unknown": 29,
+          "too_short": 6
+        }
+      },
+      "events": [
+        {
+          "gestureType": "dynamic",
+          "tMs": 7834,
+          "startMs": 7667,
+          "endMs": 7834,
+          "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+          "gestureName": "张手",
+          "positiveDistance": 0.25317895203453483,
+          "negativeDistance": null,
+          "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+          "negativeSampleId": null,
+          "withinThreshold": true,
+          "blockedByNegative": false,
+          "actionId": "previous_page",
+          "distanceMetric": "motion_dtw",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.25317895203453483,
+              "negativeDistance": null,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": null,
+              "withinThreshold": true,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": null,
+              "negativeDistance": null,
+              "positiveSampleId": null,
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "completion": "rolling_match",
+          "handTrackId": "hand-5",
+          "side": "Left"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 9700,
+          "startMs": 9500,
+          "endMs": 9700,
+          "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+          "gestureName": "右滑",
+          "positiveDistance": 0.20314416590289627,
+          "negativeDistance": null,
+          "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+          "negativeSampleId": null,
+          "withinThreshold": true,
+          "blockedByNegative": false,
+          "actionId": "next_page",
+          "distanceMetric": "motion_dtw",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.20314416590289627,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": true,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": null,
+              "negativeDistance": null,
+              "positiveSampleId": null,
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "completion": "rolling_match",
+          "handTrackId": "hand-3",
+          "side": "Right"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 11967,
+          "startMs": 11801,
+          "endMs": 11967,
+          "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+          "gestureName": "张手",
+          "positiveDistance": 0.26316519484053225,
+          "negativeDistance": null,
+          "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+          "negativeSampleId": null,
+          "withinThreshold": true,
+          "blockedByNegative": false,
+          "actionId": "previous_page",
+          "distanceMetric": "motion_dtw",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.26316519484053225,
+              "negativeDistance": null,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": null,
+              "withinThreshold": true,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": null,
+              "negativeDistance": null,
+              "positiveSampleId": null,
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "completion": "rolling_match",
+          "handTrackId": "hand-7",
+          "side": "Left"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 14134,
+          "startMs": 13934,
+          "endMs": 14134,
+          "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+          "gestureName": "握拳",
+          "positiveDistance": 0.03095397538795669,
+          "negativeDistance": null,
+          "positiveSampleId": "b2ee15b8-e5ec-48ab-a50d-ddc71b5cb30b",
+          "negativeSampleId": null,
+          "withinThreshold": true,
+          "blockedByNegative": false,
+          "actionId": "toggle_gesture_control",
+          "distanceMetric": "pose_neighbors",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.03095397538795669,
+              "negativeDistance": null,
+              "positiveSampleId": "b2ee15b8-e5ec-48ab-a50d-ddc71b5cb30b",
+              "negativeSampleId": null,
+              "withinThreshold": true,
+              "blockedByNegative": false
+            }
+          ],
+          "completion": "settled",
+          "handTrackId": "hand-3",
+          "side": "Right"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 16934,
+          "startMs": 16667,
+          "endMs": 16934,
+          "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+          "gestureName": "张手",
+          "positiveDistance": 0.27221662932704815,
+          "negativeDistance": null,
+          "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+          "negativeSampleId": null,
+          "withinThreshold": true,
+          "blockedByNegative": false,
+          "actionId": "previous_page",
+          "distanceMetric": "motion_dtw",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.27221662932704815,
+              "negativeDistance": null,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": null,
+              "withinThreshold": true,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": null,
+              "negativeDistance": null,
+              "positiveSampleId": null,
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "completion": "rolling_match",
+          "handTrackId": "hand-8",
+          "side": "Right"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 20868,
+          "startMs": 20668,
+          "endMs": 20868,
+          "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+          "gestureName": "握拳",
+          "positiveDistance": 0.014117349384183762,
+          "negativeDistance": null,
+          "positiveSampleId": "3cd95813-6447-48da-8312-72374312882e",
+          "negativeSampleId": null,
+          "withinThreshold": true,
+          "blockedByNegative": false,
+          "actionId": "toggle_gesture_control",
+          "distanceMetric": "pose_neighbors",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.014117349384183762,
+              "negativeDistance": null,
+              "positiveSampleId": "3cd95813-6447-48da-8312-72374312882e",
+              "negativeSampleId": null,
+              "withinThreshold": true,
+              "blockedByNegative": false
+            }
+          ],
+          "completion": "settled",
+          "handTrackId": "hand-8",
+          "side": "Right"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 25768,
+          "startMs": 25568,
+          "endMs": 25768,
+          "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+          "gestureName": "张手",
+          "positiveDistance": 0.196434948843002,
+          "negativeDistance": null,
+          "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+          "negativeSampleId": null,
+          "withinThreshold": true,
+          "blockedByNegative": false,
+          "actionId": "previous_page",
+          "distanceMetric": "motion_dtw",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.196434948843002,
+              "negativeDistance": null,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": null,
+              "withinThreshold": true,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": null,
+              "negativeDistance": null,
+              "positiveSampleId": null,
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "completion": "rolling_match",
+          "handTrackId": "hand-15",
+          "side": "Left"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 26268,
+          "startMs": 26101,
+          "endMs": 26268,
+          "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+          "gestureName": "张手",
+          "positiveDistance": 0.25035712807033356,
+          "negativeDistance": null,
+          "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+          "negativeSampleId": null,
+          "withinThreshold": true,
+          "blockedByNegative": false,
+          "actionId": "previous_page",
+          "distanceMetric": "motion_dtw",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.25035712807033356,
+              "negativeDistance": null,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": null,
+              "withinThreshold": true,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": null,
+              "negativeDistance": null,
+              "positiveSampleId": null,
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "completion": "rolling_match",
+          "handTrackId": "hand-15",
+          "side": "Left"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 26801,
+          "startMs": 26634,
+          "endMs": 26801,
+          "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+          "gestureName": "张手",
+          "positiveDistance": 0.26615734056637785,
+          "negativeDistance": null,
+          "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+          "negativeSampleId": null,
+          "withinThreshold": true,
+          "blockedByNegative": false,
+          "actionId": "previous_page",
+          "distanceMetric": "motion_dtw",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.26615734056637785,
+              "negativeDistance": null,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": null,
+              "withinThreshold": true,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": null,
+              "negativeDistance": null,
+              "positiveSampleId": null,
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "completion": "rolling_match",
+          "handTrackId": "hand-14",
+          "side": "Right"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 33135,
+          "startMs": 32868,
+          "endMs": 33135,
+          "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+          "gestureName": "右滑",
+          "positiveDistance": 0.186662583664051,
+          "negativeDistance": null,
+          "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+          "negativeSampleId": null,
+          "withinThreshold": true,
+          "blockedByNegative": false,
+          "actionId": "next_page",
+          "distanceMetric": "motion_dtw",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.186662583664051,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": true,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": null,
+              "negativeDistance": null,
+              "positiveSampleId": null,
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "completion": "rolling_match",
+          "handTrackId": "hand-14",
+          "side": "Right"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 34401,
+          "startMs": 34235,
+          "endMs": 34401,
+          "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+          "gestureName": "张手",
+          "positiveDistance": 0.2155901003135719,
+          "negativeDistance": null,
+          "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+          "negativeSampleId": null,
+          "withinThreshold": true,
+          "blockedByNegative": false,
+          "actionId": "previous_page",
+          "distanceMetric": "motion_dtw",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.2155901003135719,
+              "negativeDistance": null,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": null,
+              "withinThreshold": true,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": null,
+              "negativeDistance": null,
+              "positiveSampleId": null,
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "completion": "rolling_match",
+          "handTrackId": "hand-14",
+          "side": "Right"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 35935,
+          "startMs": 35768,
+          "endMs": 35935,
+          "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+          "gestureName": "右滑",
+          "positiveDistance": 0.22260148470375038,
+          "negativeDistance": null,
+          "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+          "negativeSampleId": null,
+          "withinThreshold": true,
+          "blockedByNegative": false,
+          "actionId": "next_page",
+          "distanceMetric": "motion_dtw",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.22260148470375038,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": true,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.5897310844635582,
+              "negativeDistance": null,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "completion": "rolling_match",
+          "handTrackId": "hand-14",
+          "side": "Right"
+        }
+      ],
+      "rejections": [
+        {
+          "gestureType": "dynamic",
+          "tMs": 1167,
+          "startMs": 500,
+          "endMs": 900,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-1"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 3500,
+          "startMs": 1667,
+          "endMs": 3233,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-4"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 3967,
+          "startMs": 633,
+          "endMs": 3834,
+          "reason": "too_long",
+          "scores": [],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 5267,
+          "startMs": 3967,
+          "endMs": 5134,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.9759465312936279,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 1.0473381605375103,
+              "negativeDistance": null,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 6400,
+          "startMs": 5300,
+          "endMs": 6267,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.7585848468106664,
+              "negativeDistance": null,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.938605912093222,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 7400,
+          "startMs": 4100,
+          "endMs": 7267,
+          "reason": "too_long",
+          "scores": [],
+          "handTrackId": "hand-5"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 7667,
+          "startMs": 7467,
+          "endMs": 7534,
+          "reason": "too_short",
+          "scores": [],
+          "handTrackId": "hand-5"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 9434,
+          "startMs": 6400,
+          "endMs": 9300,
+          "reason": "too_long",
+          "scores": [],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 10200,
+          "startMs": 10000,
+          "endMs": 10067,
+          "reason": "too_short",
+          "scores": [],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 11134,
+          "startMs": 10667,
+          "endMs": 10867,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-6"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 11934,
+          "startMs": 10267,
+          "endMs": 11801,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 1.092884991439993,
+              "negativeDistance": null,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 1.3050969248853854,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 11967,
+          "startMs": 11767,
+          "endMs": 11967,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.866769641001684,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 12301,
+          "startMs": 12101,
+          "endMs": 12167,
+          "reason": "too_short",
+          "scores": [],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 12367,
+          "startMs": 12167,
+          "endMs": 12367,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.8440781599106565,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 13201,
+          "startMs": 13001,
+          "endMs": 13067,
+          "reason": "too_short",
+          "scores": [],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 14101,
+          "startMs": 12334,
+          "endMs": 13967,
+          "reason": "too_long",
+          "scores": [],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 14134,
+          "startMs": 13201,
+          "endMs": 14001,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.9574419239491622,
+              "negativeDistance": null,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 1.1657927917697413,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 14167,
+          "startMs": 13967,
+          "endMs": 14167,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.23254277108543467,
+              "negativeDistance": null,
+              "positiveSampleId": "b2ee15b8-e5ec-48ab-a50d-ddc71b5cb30b",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 15301,
+          "startMs": 14267,
+          "endMs": 15167,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.9456884273033654,
+              "negativeDistance": null,
+              "positiveSampleId": "fd23a62e-a52f-4521-9cf1-5a5febc7bdeb",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 1.013788134560514,
+              "negativeDistance": null,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 15367,
+          "startMs": 15167,
+          "endMs": 15367,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.19300209327300855,
+              "negativeDistance": null,
+              "positiveSampleId": "b2ee15b8-e5ec-48ab-a50d-ddc71b5cb30b",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 15634,
+          "startMs": 14234,
+          "endMs": 15367,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 16434,
+          "startMs": 15867,
+          "endMs": 16301,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.6437800902576025,
+              "negativeDistance": null,
+              "positiveSampleId": "fd23a62e-a52f-4521-9cf1-5a5febc7bdeb",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.775552405186481,
+              "negativeDistance": null,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-8"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 16534,
+          "startMs": 15567,
+          "endMs": 16401,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.7624149154387578,
+              "negativeDistance": null,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 1.1854147525103593,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 16567,
+          "startMs": 16367,
+          "endMs": 16567,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.7237048892498881,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-8"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 16601,
+          "startMs": 16401,
+          "endMs": 16601,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.9960102353044564,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 20234,
+          "startMs": 18567,
+          "endMs": 19968,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-9"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 20834,
+          "startMs": 17234,
+          "endMs": 20701,
+          "reason": "too_long",
+          "scores": [],
+          "handTrackId": "hand-8"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 21868,
+          "startMs": 21568,
+          "endMs": 21601,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-11"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 22834,
+          "startMs": 20968,
+          "endMs": 22568,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-8"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 25301,
+          "startMs": 23001,
+          "endMs": 25168,
+          "reason": "too_long",
+          "scores": [],
+          "handTrackId": "hand-15"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 25368,
+          "startMs": 25168,
+          "endMs": 25368,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.7050404973908666,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-15"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 28768,
+          "startMs": 28435,
+          "endMs": 28635,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.7249503253740315,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.8885344859508555,
+              "negativeDistance": null,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 28835,
+          "startMs": 28635,
+          "endMs": 28835,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.18532762797646388,
+              "negativeDistance": null,
+              "positiveSampleId": "3cd95813-6447-48da-8312-72374312882e",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 29801,
+          "startMs": 29468,
+          "endMs": 29535,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-16"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 29868,
+          "startMs": 28901,
+          "endMs": 29735,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.6598661703106996,
+              "negativeDistance": null,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 1.0546818800942916,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 29935,
+          "startMs": 29735,
+          "endMs": 29935,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.48377756620201556,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 30101,
+          "startMs": 29901,
+          "endMs": 29968,
+          "reason": "too_short",
+          "scores": [],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 30835,
+          "startMs": 30135,
+          "endMs": 30701,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.9418919240323409,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.9592068335275153,
+              "negativeDistance": null,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 31201,
+          "startMs": 30901,
+          "endMs": 31068,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.348271562246062,
+              "negativeDistance": null,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.4636045070206659,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 31335,
+          "startMs": 31135,
+          "endMs": 31335,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.6422682282847316,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 31568,
+          "startMs": 31368,
+          "endMs": 31568,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.654082758675823,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 31968,
+          "startMs": 31735,
+          "endMs": 31835,
+          "reason": "too_short",
+          "scores": [],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 32035,
+          "startMs": 31835,
+          "endMs": 32035,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.7262692189964379,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 33235,
+          "startMs": 32535,
+          "endMs": 33101,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.9714649412029692,
+              "negativeDistance": null,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 1.1295182781591446,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-17"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 33301,
+          "startMs": 33101,
+          "endMs": 33301,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.33340249239012004,
+              "negativeDistance": null,
+              "positiveSampleId": "b2ee15b8-e5ec-48ab-a50d-ddc71b5cb30b",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-17"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 34435,
+          "startMs": 33501,
+          "endMs": 34101,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-17"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 35068,
+          "startMs": 34535,
+          "endMs": 34935,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.51491888488954,
+              "negativeDistance": null,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.7807056909803913,
+              "negativeDistance": null,
+              "positiveSampleId": "fd23a62e-a52f-4521-9cf1-5a5febc7bdeb",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 35068,
+          "startMs": 34501,
+          "endMs": 34801,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-17"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 35102,
+          "startMs": 34901,
+          "endMs": 35102,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.689894073384796,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 36035,
+          "startMs": 35568,
+          "endMs": 35902,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.6881759173007691,
+              "negativeDistance": null,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.9747181535991049,
+              "negativeDistance": null,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-17"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 36068,
+          "startMs": 35868,
+          "endMs": 36068,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.533996342493048,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-17"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 38502,
+          "startMs": 38135,
+          "endMs": 38235,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-18"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 38535,
+          "startMs": 36068,
+          "endMs": 38268,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-14"
+        }
+      ],
+      "matched": [
+        {
+          "intentId": "P02-CAL-01",
+          "eventIndex": 1
+        },
+        {
+          "intentId": "P02-CAL-02",
+          "eventIndex": 3
+        },
+        {
+          "intentId": "P02-CAL-03",
+          "eventIndex": 5
+        },
+        {
+          "intentId": "P02-CAL-05",
+          "eventIndex": 9
+        }
+      ],
+      "errors": [
+        {
+          "reviewId": "[\"missed\",\"P02-CAL-04\",null]",
+          "kind": "missed",
+          "intent": {
+            "intentId": "P02-CAL-04",
+            "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+            "actionId": "previous_page",
+            "name": "张手",
+            "notedMs": [
+              28000
+            ],
+            "startMs": 27600,
+            "endMs": 28620,
+            "sampleStartMs": 27650,
+            "sampleEndMs": 28300,
+            "activeHandHint": {
+              "atMs": 28068,
+              "imageX": 0.606
+            }
+          },
+          "eventIndex": null,
+          "event": null
+        },
+        {
+          "reviewId": "[\"false_trigger\",null,0]",
+          "kind": "false_trigger",
+          "intent": null,
+          "eventIndex": 0,
+          "event": {
+            "gestureType": "dynamic",
+            "tMs": 7834,
+            "startMs": 7667,
+            "endMs": 7834,
+            "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+            "gestureName": "张手",
+            "positiveDistance": 0.25317895203453483,
+            "negativeDistance": null,
+            "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+            "negativeSampleId": null,
+            "withinThreshold": true,
+            "blockedByNegative": false,
+            "actionId": "previous_page",
+            "distanceMetric": "motion_dtw",
+            "scores": [
+              {
+                "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+                "gestureName": "张手",
+                "positiveDistance": 0.25317895203453483,
+                "negativeDistance": null,
+                "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+                "negativeSampleId": null,
+                "withinThreshold": true,
+                "blockedByNegative": false
+              },
+              {
+                "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+                "gestureName": "右滑",
+                "positiveDistance": null,
+                "negativeDistance": null,
+                "positiveSampleId": null,
+                "negativeSampleId": null,
+                "withinThreshold": false,
+                "blockedByNegative": false
+              }
+            ],
+            "completion": "rolling_match",
+            "handTrackId": "hand-5",
+            "side": "Left"
+          }
+        },
+        {
+          "reviewId": "[\"false_trigger\",null,2]",
+          "kind": "false_trigger",
+          "intent": null,
+          "eventIndex": 2,
+          "event": {
+            "gestureType": "dynamic",
+            "tMs": 11967,
+            "startMs": 11801,
+            "endMs": 11967,
+            "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+            "gestureName": "张手",
+            "positiveDistance": 0.26316519484053225,
+            "negativeDistance": null,
+            "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+            "negativeSampleId": null,
+            "withinThreshold": true,
+            "blockedByNegative": false,
+            "actionId": "previous_page",
+            "distanceMetric": "motion_dtw",
+            "scores": [
+              {
+                "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+                "gestureName": "张手",
+                "positiveDistance": 0.26316519484053225,
+                "negativeDistance": null,
+                "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+                "negativeSampleId": null,
+                "withinThreshold": true,
+                "blockedByNegative": false
+              },
+              {
+                "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+                "gestureName": "右滑",
+                "positiveDistance": null,
+                "negativeDistance": null,
+                "positiveSampleId": null,
+                "negativeSampleId": null,
+                "withinThreshold": false,
+                "blockedByNegative": false
+              }
+            ],
+            "completion": "rolling_match",
+            "handTrackId": "hand-7",
+            "side": "Left"
+          }
+        },
+        {
+          "reviewId": "[\"false_trigger\",null,4]",
+          "kind": "false_trigger",
+          "intent": null,
+          "eventIndex": 4,
+          "event": {
+            "gestureType": "dynamic",
+            "tMs": 16934,
+            "startMs": 16667,
+            "endMs": 16934,
+            "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+            "gestureName": "张手",
+            "positiveDistance": 0.27221662932704815,
+            "negativeDistance": null,
+            "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+            "negativeSampleId": null,
+            "withinThreshold": true,
+            "blockedByNegative": false,
+            "actionId": "previous_page",
+            "distanceMetric": "motion_dtw",
+            "scores": [
+              {
+                "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+                "gestureName": "张手",
+                "positiveDistance": 0.27221662932704815,
+                "negativeDistance": null,
+                "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+                "negativeSampleId": null,
+                "withinThreshold": true,
+                "blockedByNegative": false
+              },
+              {
+                "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+                "gestureName": "右滑",
+                "positiveDistance": null,
+                "negativeDistance": null,
+                "positiveSampleId": null,
+                "negativeSampleId": null,
+                "withinThreshold": false,
+                "blockedByNegative": false
+              }
+            ],
+            "completion": "rolling_match",
+            "handTrackId": "hand-8",
+            "side": "Right"
+          }
+        },
+        {
+          "reviewId": "[\"false_trigger\",null,6]",
+          "kind": "false_trigger",
+          "intent": null,
+          "eventIndex": 6,
+          "event": {
+            "gestureType": "dynamic",
+            "tMs": 25768,
+            "startMs": 25568,
+            "endMs": 25768,
+            "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+            "gestureName": "张手",
+            "positiveDistance": 0.196434948843002,
+            "negativeDistance": null,
+            "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+            "negativeSampleId": null,
+            "withinThreshold": true,
+            "blockedByNegative": false,
+            "actionId": "previous_page",
+            "distanceMetric": "motion_dtw",
+            "scores": [
+              {
+                "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+                "gestureName": "张手",
+                "positiveDistance": 0.196434948843002,
+                "negativeDistance": null,
+                "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+                "negativeSampleId": null,
+                "withinThreshold": true,
+                "blockedByNegative": false
+              },
+              {
+                "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+                "gestureName": "右滑",
+                "positiveDistance": null,
+                "negativeDistance": null,
+                "positiveSampleId": null,
+                "negativeSampleId": null,
+                "withinThreshold": false,
+                "blockedByNegative": false
+              }
+            ],
+            "completion": "rolling_match",
+            "handTrackId": "hand-15",
+            "side": "Left"
+          }
+        },
+        {
+          "reviewId": "[\"false_trigger\",null,7]",
+          "kind": "false_trigger",
+          "intent": null,
+          "eventIndex": 7,
+          "event": {
+            "gestureType": "dynamic",
+            "tMs": 26268,
+            "startMs": 26101,
+            "endMs": 26268,
+            "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+            "gestureName": "张手",
+            "positiveDistance": 0.25035712807033356,
+            "negativeDistance": null,
+            "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+            "negativeSampleId": null,
+            "withinThreshold": true,
+            "blockedByNegative": false,
+            "actionId": "previous_page",
+            "distanceMetric": "motion_dtw",
+            "scores": [
+              {
+                "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+                "gestureName": "张手",
+                "positiveDistance": 0.25035712807033356,
+                "negativeDistance": null,
+                "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+                "negativeSampleId": null,
+                "withinThreshold": true,
+                "blockedByNegative": false
+              },
+              {
+                "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+                "gestureName": "右滑",
+                "positiveDistance": null,
+                "negativeDistance": null,
+                "positiveSampleId": null,
+                "negativeSampleId": null,
+                "withinThreshold": false,
+                "blockedByNegative": false
+              }
+            ],
+            "completion": "rolling_match",
+            "handTrackId": "hand-15",
+            "side": "Left"
+          }
+        },
+        {
+          "reviewId": "[\"false_trigger\",null,8]",
+          "kind": "false_trigger",
+          "intent": null,
+          "eventIndex": 8,
+          "event": {
+            "gestureType": "dynamic",
+            "tMs": 26801,
+            "startMs": 26634,
+            "endMs": 26801,
+            "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+            "gestureName": "张手",
+            "positiveDistance": 0.26615734056637785,
+            "negativeDistance": null,
+            "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+            "negativeSampleId": null,
+            "withinThreshold": true,
+            "blockedByNegative": false,
+            "actionId": "previous_page",
+            "distanceMetric": "motion_dtw",
+            "scores": [
+              {
+                "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+                "gestureName": "张手",
+                "positiveDistance": 0.26615734056637785,
+                "negativeDistance": null,
+                "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+                "negativeSampleId": null,
+                "withinThreshold": true,
+                "blockedByNegative": false
+              },
+              {
+                "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+                "gestureName": "右滑",
+                "positiveDistance": null,
+                "negativeDistance": null,
+                "positiveSampleId": null,
+                "negativeSampleId": null,
+                "withinThreshold": false,
+                "blockedByNegative": false
+              }
+            ],
+            "completion": "rolling_match",
+            "handTrackId": "hand-14",
+            "side": "Right"
+          }
+        },
+        {
+          "reviewId": "[\"false_trigger\",null,10]",
+          "kind": "false_trigger",
+          "intent": null,
+          "eventIndex": 10,
+          "event": {
+            "gestureType": "dynamic",
+            "tMs": 34401,
+            "startMs": 34235,
+            "endMs": 34401,
+            "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+            "gestureName": "张手",
+            "positiveDistance": 0.2155901003135719,
+            "negativeDistance": null,
+            "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+            "negativeSampleId": null,
+            "withinThreshold": true,
+            "blockedByNegative": false,
+            "actionId": "previous_page",
+            "distanceMetric": "motion_dtw",
+            "scores": [
+              {
+                "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+                "gestureName": "张手",
+                "positiveDistance": 0.2155901003135719,
+                "negativeDistance": null,
+                "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+                "negativeSampleId": null,
+                "withinThreshold": true,
+                "blockedByNegative": false
+              },
+              {
+                "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+                "gestureName": "右滑",
+                "positiveDistance": null,
+                "negativeDistance": null,
+                "positiveSampleId": null,
+                "negativeSampleId": null,
+                "withinThreshold": false,
+                "blockedByNegative": false
+              }
+            ],
+            "completion": "rolling_match",
+            "handTrackId": "hand-14",
+            "side": "Right"
+          }
+        },
+        {
+          "reviewId": "[\"false_trigger\",null,11]",
+          "kind": "false_trigger",
+          "intent": null,
+          "eventIndex": 11,
+          "event": {
+            "gestureType": "dynamic",
+            "tMs": 35935,
+            "startMs": 35768,
+            "endMs": 35935,
+            "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+            "gestureName": "右滑",
+            "positiveDistance": 0.22260148470375038,
+            "negativeDistance": null,
+            "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+            "negativeSampleId": null,
+            "withinThreshold": true,
+            "blockedByNegative": false,
+            "actionId": "next_page",
+            "distanceMetric": "motion_dtw",
+            "scores": [
+              {
+                "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+                "gestureName": "右滑",
+                "positiveDistance": 0.22260148470375038,
+                "negativeDistance": null,
+                "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+                "negativeSampleId": null,
+                "withinThreshold": true,
+                "blockedByNegative": false
+              },
+              {
+                "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+                "gestureName": "张手",
+                "positiveDistance": 0.5897310844635582,
+                "negativeDistance": null,
+                "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+                "negativeSampleId": null,
+                "withinThreshold": false,
+                "blockedByNegative": false
+              }
+            ],
+            "completion": "rolling_match",
+            "handTrackId": "hand-14",
+            "side": "Right"
+          }
+        }
+      ]
+    },
+    "C": {
+      "profileRevisionId": "360b08a9-710c-4cda-80fa-7d8393181c76",
+      "metrics": {
+        "intended": 5,
+        "correct": 5,
+        "missed": 0,
+        "wrongClass": 0,
+        "wrongAction": 0,
+        "duplicate": 0,
+        "falseTrigger": 0,
+        "totalTriggers": 5,
+        "rejectionReasons": {
+          "tracking_gap": 14,
+          "too_long": 6,
+          "unknown": 35,
+          "too_short": 7,
+          "pose_not_steady": 1
+        }
+      },
+      "events": [
+        {
+          "gestureType": "dynamic",
+          "tMs": 9700,
+          "startMs": 9500,
+          "endMs": 9700,
+          "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+          "gestureName": "右滑",
+          "positiveDistance": 0.20314416590289627,
+          "negativeDistance": 0.27732225585555426,
+          "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+          "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+          "withinThreshold": true,
+          "blockedByNegative": false,
+          "actionId": "next_page",
+          "distanceMetric": "motion_dtw",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.20314416590289627,
+              "negativeDistance": 0.27732225585555426,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+              "withinThreshold": true,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": null,
+              "negativeDistance": null,
+              "positiveSampleId": null,
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "completion": "rolling_match",
+          "handTrackId": "hand-3",
+          "side": "Right"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 14134,
+          "startMs": 13934,
+          "endMs": 14134,
+          "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+          "gestureName": "握拳",
+          "positiveDistance": 0.03095397538795669,
+          "negativeDistance": null,
+          "positiveSampleId": "b2ee15b8-e5ec-48ab-a50d-ddc71b5cb30b",
+          "negativeSampleId": null,
+          "withinThreshold": true,
+          "blockedByNegative": false,
+          "actionId": "toggle_gesture_control",
+          "distanceMetric": "pose_neighbors",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.03095397538795669,
+              "negativeDistance": null,
+              "positiveSampleId": "b2ee15b8-e5ec-48ab-a50d-ddc71b5cb30b",
+              "negativeSampleId": null,
+              "withinThreshold": true,
+              "blockedByNegative": false
+            }
+          ],
+          "completion": "settled",
+          "handTrackId": "hand-3",
+          "side": "Right"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 20868,
+          "startMs": 20668,
+          "endMs": 20868,
+          "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+          "gestureName": "握拳",
+          "positiveDistance": 0.014117349384183762,
+          "negativeDistance": null,
+          "positiveSampleId": "3cd95813-6447-48da-8312-72374312882e",
+          "negativeSampleId": null,
+          "withinThreshold": true,
+          "blockedByNegative": false,
+          "actionId": "toggle_gesture_control",
+          "distanceMetric": "pose_neighbors",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.014117349384183762,
+              "negativeDistance": null,
+              "positiveSampleId": "3cd95813-6447-48da-8312-72374312882e",
+              "negativeSampleId": null,
+              "withinThreshold": true,
+              "blockedByNegative": false
+            }
+          ],
+          "completion": "settled",
+          "handTrackId": "hand-8",
+          "side": "Right"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 28101,
+          "startMs": 27935,
+          "endMs": 28101,
+          "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+          "gestureName": "张手",
+          "positiveDistance": 0,
+          "negativeDistance": 0.196434948843002,
+          "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+          "negativeSampleId": "beaf503a-963d-4657-8bea-a31fb283d3f0",
+          "withinThreshold": true,
+          "blockedByNegative": false,
+          "actionId": "previous_page",
+          "distanceMetric": "motion_dtw",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0,
+              "negativeDistance": 0.196434948843002,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": "beaf503a-963d-4657-8bea-a31fb283d3f0",
+              "withinThreshold": true,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": null,
+              "negativeDistance": null,
+              "positiveSampleId": null,
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "completion": "rolling_match",
+          "handTrackId": "hand-14",
+          "side": "Right"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 33135,
+          "startMs": 32868,
+          "endMs": 33135,
+          "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+          "gestureName": "右滑",
+          "positiveDistance": 0.186662583664051,
+          "negativeDistance": 0.3067306781089882,
+          "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+          "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+          "withinThreshold": true,
+          "blockedByNegative": false,
+          "actionId": "next_page",
+          "distanceMetric": "motion_dtw",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.186662583664051,
+              "negativeDistance": 0.3067306781089882,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+              "withinThreshold": true,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": null,
+              "negativeDistance": null,
+              "positiveSampleId": null,
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "completion": "rolling_match",
+          "handTrackId": "hand-14",
+          "side": "Right"
+        }
+      ],
+      "rejections": [
+        {
+          "gestureType": "dynamic",
+          "tMs": 1167,
+          "startMs": 500,
+          "endMs": 900,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-1"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 3500,
+          "startMs": 1667,
+          "endMs": 3233,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-4"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 3967,
+          "startMs": 633,
+          "endMs": 3834,
+          "reason": "too_long",
+          "scores": [],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 5267,
+          "startMs": 3967,
+          "endMs": 5134,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.9759465312936279,
+              "negativeDistance": 1.0907901988782773,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 1.0473381605375103,
+              "negativeDistance": 0.9335749743101086,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": "415fb645-30ca-4d3c-89c5-c24d2e9b46f9",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 6400,
+          "startMs": 5300,
+          "endMs": 6267,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.7585848468106664,
+              "negativeDistance": 0.6297935211722346,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": "4a57de73-9b80-4590-a161-eb12e20a4dc1",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.938605912093222,
+              "negativeDistance": 1.0873335570599916,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 7400,
+          "startMs": 4100,
+          "endMs": 7267,
+          "reason": "too_long",
+          "scores": [],
+          "handTrackId": "hand-5"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 7667,
+          "startMs": 7467,
+          "endMs": 7534,
+          "reason": "too_short",
+          "scores": [],
+          "handTrackId": "hand-5"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 9300,
+          "startMs": 7667,
+          "endMs": 9034,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-5"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 9434,
+          "startMs": 6400,
+          "endMs": 9300,
+          "reason": "too_long",
+          "scores": [],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 10200,
+          "startMs": 10000,
+          "endMs": 10067,
+          "reason": "too_short",
+          "scores": [],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 11134,
+          "startMs": 10667,
+          "endMs": 10867,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-6"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 11934,
+          "startMs": 10267,
+          "endMs": 11801,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 1.092884991439993,
+              "negativeDistance": 0.9526887237417873,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": "59cd26fd-38f3-4b9e-9a61-13e5b76c1450",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 1.3050969248853854,
+              "negativeDistance": 1.531851742732399,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 11967,
+          "startMs": 11767,
+          "endMs": 11967,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.866769641001684,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 12301,
+          "startMs": 12101,
+          "endMs": 12167,
+          "reason": "too_short",
+          "scores": [],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 12367,
+          "startMs": 12167,
+          "endMs": 12367,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.8440781599106565,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 12934,
+          "startMs": 11534,
+          "endMs": 12801,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 1.021214020482402,
+              "negativeDistance": 0.8967271599189518,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": "a87a84c5-1a3e-4332-98ea-194908473f11",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 1.133531043281244,
+              "negativeDistance": 1.24721770578796,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 13001,
+          "startMs": 12801,
+          "endMs": 13001,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.3231162441182255,
+              "negativeDistance": null,
+              "positiveSampleId": "9eed43b8-71cf-49c2-9cd3-98087de59078",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 13201,
+          "startMs": 13001,
+          "endMs": 13067,
+          "reason": "too_short",
+          "scores": [],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 14101,
+          "startMs": 12334,
+          "endMs": 13967,
+          "reason": "too_long",
+          "scores": [],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 14134,
+          "startMs": 13201,
+          "endMs": 14001,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.9574419239491622,
+              "negativeDistance": 0.8532047105077061,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": "4a57de73-9b80-4590-a161-eb12e20a4dc1",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 1.1657927917697413,
+              "negativeDistance": 1.3458046237259602,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 14167,
+          "startMs": 13967,
+          "endMs": 14167,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.23254277108543467,
+              "negativeDistance": null,
+              "positiveSampleId": "b2ee15b8-e5ec-48ab-a50d-ddc71b5cb30b",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 15301,
+          "startMs": 14267,
+          "endMs": 15167,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.9456884273033654,
+              "negativeDistance": 0.9481089739689234,
+              "positiveSampleId": "fd23a62e-a52f-4521-9cf1-5a5febc7bdeb",
+              "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 1.013788134560514,
+              "negativeDistance": 0.9896591624887415,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": "beaf503a-963d-4657-8bea-a31fb283d3f0",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 15367,
+          "startMs": 15167,
+          "endMs": 15367,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.19300209327300855,
+              "negativeDistance": null,
+              "positiveSampleId": "b2ee15b8-e5ec-48ab-a50d-ddc71b5cb30b",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 15634,
+          "startMs": 14234,
+          "endMs": 15367,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-3"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 16434,
+          "startMs": 15867,
+          "endMs": 16301,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.6437800902576025,
+              "negativeDistance": 0.6531622785283135,
+              "positiveSampleId": "fd23a62e-a52f-4521-9cf1-5a5febc7bdeb",
+              "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.775552405186481,
+              "negativeDistance": 0.7733972470944445,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": "415fb645-30ca-4d3c-89c5-c24d2e9b46f9",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-8"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 16534,
+          "startMs": 15567,
+          "endMs": 16401,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.7624149154387578,
+              "negativeDistance": 0.7880734443410652,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": "01f3a2de-c16f-4968-bcc4-b68b4929891e",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 1.1854147525103593,
+              "negativeDistance": 1.344575082165153,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 16567,
+          "startMs": 16367,
+          "endMs": 16567,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.7237048892498881,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-8"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 16601,
+          "startMs": 16401,
+          "endMs": 16601,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.9960102353044564,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-7"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 17167,
+          "startMs": 16867,
+          "endMs": 17034,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.3932623493498448,
+              "negativeDistance": 0.19103824362493835,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": "01f3a2de-c16f-4968-bcc4-b68b4929891e",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.60559784720876,
+              "negativeDistance": 0.7595202427645269,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-8"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 17234,
+          "startMs": 17034,
+          "endMs": 17234,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.8507289307917877,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-8"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 20234,
+          "startMs": 18567,
+          "endMs": 19968,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-9"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 20834,
+          "startMs": 17234,
+          "endMs": 20701,
+          "reason": "too_long",
+          "scores": [],
+          "handTrackId": "hand-8"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 21868,
+          "startMs": 21568,
+          "endMs": 21601,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-11"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 22834,
+          "startMs": 20968,
+          "endMs": 22568,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-8"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 25301,
+          "startMs": 23001,
+          "endMs": 25168,
+          "reason": "too_long",
+          "scores": [],
+          "handTrackId": "hand-15"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 25368,
+          "startMs": 25168,
+          "endMs": 25368,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.7050404973908666,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-15"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 25901,
+          "startMs": 25701,
+          "endMs": 25768,
+          "reason": "too_short",
+          "scores": [],
+          "handTrackId": "hand-15"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 25934,
+          "startMs": 25734,
+          "endMs": 25934,
+          "reason": "pose_not_steady",
+          "scores": [],
+          "handTrackId": "hand-15"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 27868,
+          "startMs": 26101,
+          "endMs": 27601,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-15"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 28768,
+          "startMs": 28435,
+          "endMs": 28635,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.7249503253740315,
+              "negativeDistance": 0.9359013427422571,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.8885344859508555,
+              "negativeDistance": 0.7649485152236954,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": "59cd26fd-38f3-4b9e-9a61-13e5b76c1450",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 28835,
+          "startMs": 28635,
+          "endMs": 28835,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.18532762797646388,
+              "negativeDistance": null,
+              "positiveSampleId": "3cd95813-6447-48da-8312-72374312882e",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 29801,
+          "startMs": 29468,
+          "endMs": 29535,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-16"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 29868,
+          "startMs": 28901,
+          "endMs": 29735,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.6598661703106996,
+              "negativeDistance": 0.7066171168584272,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": "4a57de73-9b80-4590-a161-eb12e20a4dc1",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 1.0546818800942916,
+              "negativeDistance": 1.1993628710270468,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 29935,
+          "startMs": 29735,
+          "endMs": 29935,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.48377756620201556,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 30101,
+          "startMs": 29901,
+          "endMs": 29968,
+          "reason": "too_short",
+          "scores": [],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 30835,
+          "startMs": 30135,
+          "endMs": 30701,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.9418919240323409,
+              "negativeDistance": 1.0132425049206162,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.9592068335275153,
+              "negativeDistance": 0.9172208383969821,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": "beaf503a-963d-4657-8bea-a31fb283d3f0",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 31201,
+          "startMs": 30901,
+          "endMs": 31068,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.348271562246062,
+              "negativeDistance": 0.24875925916313787,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": "59cd26fd-38f3-4b9e-9a61-13e5b76c1450",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.4636045070206659,
+              "negativeDistance": 0.6559556510525557,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 31335,
+          "startMs": 31135,
+          "endMs": 31335,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.6422682282847316,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 31568,
+          "startMs": 31368,
+          "endMs": 31568,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.654082758675823,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 31968,
+          "startMs": 31735,
+          "endMs": 31835,
+          "reason": "too_short",
+          "scores": [],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 32035,
+          "startMs": 31835,
+          "endMs": 32035,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.7262692189964379,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 33235,
+          "startMs": 32535,
+          "endMs": 33101,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.9714649412029692,
+              "negativeDistance": 0.9051096333971455,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": "415fb645-30ca-4d3c-89c5-c24d2e9b46f9",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 1.1295182781591446,
+              "negativeDistance": 1.2701615280138987,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-17"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 33301,
+          "startMs": 33101,
+          "endMs": 33301,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.33340249239012004,
+              "negativeDistance": null,
+              "positiveSampleId": "b2ee15b8-e5ec-48ab-a50d-ddc71b5cb30b",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-17"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 34435,
+          "startMs": 33501,
+          "endMs": 34101,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-17"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 34468,
+          "startMs": 34135,
+          "endMs": 34335,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.40384977169879144,
+              "negativeDistance": 0.2370119210719117,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": "4a57de73-9b80-4590-a161-eb12e20a4dc1",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.618886983299074,
+              "negativeDistance": 0.7554074872950887,
+              "positiveSampleId": "fd23a62e-a52f-4521-9cf1-5a5febc7bdeb",
+              "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 35068,
+          "startMs": 34535,
+          "endMs": 34935,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.51491888488954,
+              "negativeDistance": 0.48016887934365926,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": "01f3a2de-c16f-4968-bcc4-b68b4929891e",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.7807056909803913,
+              "negativeDistance": 0.9069707304957733,
+              "positiveSampleId": "fd23a62e-a52f-4521-9cf1-5a5febc7bdeb",
+              "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 35068,
+          "startMs": 34501,
+          "endMs": 34801,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-17"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 35102,
+          "startMs": 34901,
+          "endMs": 35102,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.689894073384796,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 36035,
+          "startMs": 35568,
+          "endMs": 35902,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.6881759173007691,
+              "negativeDistance": 0.6211732856772524,
+              "positiveSampleId": "12301a59-e893-4f64-a415-6b571cf130a2",
+              "negativeSampleId": "59cd26fd-38f3-4b9e-9a61-13e5b76c1450",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.9747181535991049,
+              "negativeDistance": 1.1218379135661736,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-17"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 36068,
+          "startMs": 35068,
+          "endMs": 35935,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "d07d4043-8170-4322-817b-55bb517bff3e",
+              "gestureName": "右滑",
+              "positiveDistance": 0.5674784860721908,
+              "negativeDistance": 0.7146506185127594,
+              "positiveSampleId": "f8fe8afb-8cf5-4adc-8c88-e0d6ab1bc329",
+              "negativeSampleId": "688acb05-7313-446e-b72f-91ac9ed65346",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            },
+            {
+              "gestureId": "efec4ec9-fc7d-4715-86f8-34305c07c555",
+              "gestureName": "张手",
+              "positiveDistance": 0.8006380209803718,
+              "negativeDistance": 0.7132132209846589,
+              "positiveSampleId": "1f3d526e-1587-4875-85b4-f93fc1bbdb6f",
+              "negativeSampleId": "beaf503a-963d-4657-8bea-a31fb283d3f0",
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-14"
+        },
+        {
+          "gestureType": "static",
+          "tMs": 36068,
+          "startMs": 35868,
+          "endMs": 36068,
+          "reason": "unknown",
+          "scores": [
+            {
+              "gestureId": "ec3ec845-53cc-4d7e-b446-0324c7957d10",
+              "gestureName": "握拳",
+              "positiveDistance": 0.533996342493048,
+              "negativeDistance": null,
+              "positiveSampleId": "04175da9-5d8c-4aa2-8df4-f86485a3a08d",
+              "negativeSampleId": null,
+              "withinThreshold": false,
+              "blockedByNegative": false
+            }
+          ],
+          "handTrackId": "hand-17"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 38502,
+          "startMs": 38135,
+          "endMs": 38235,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-18"
+        },
+        {
+          "gestureType": "dynamic",
+          "tMs": 38535,
+          "startMs": 36068,
+          "endMs": 38268,
+          "reason": "tracking_gap",
+          "scores": [],
+          "handTrackId": "hand-14"
+        }
+      ],
+      "matched": [
+        {
+          "intentId": "P02-CAL-01",
+          "eventIndex": 0
+        },
+        {
+          "intentId": "P02-CAL-02",
+          "eventIndex": 1
+        },
+        {
+          "intentId": "P02-CAL-03",
+          "eventIndex": 2
+        },
+        {
+          "intentId": "P02-CAL-04",
+          "eventIndex": 3
+        },
+        {
+          "intentId": "P02-CAL-05",
+          "eventIndex": 4
+        }
+      ],
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "stage": "validation",
+  "participantId": "P02",
+  "tolerance": {
+    "earlyMs": 100,
+    "lateMs": 350
+  },
+  "profiles": {
+    "A": {
+      "file": "A-profile-v4.json",
+      "revisionId": "3f6f3cf6-1a36-4272-bb7b-8cb770e8b6c9",
+      "sha256": "2f81896879f35fc63311001bc24a84df88c96cc51bed7c9f780a3600b04de5a5"
+    },
+    "B": {
+      "file": "B-profile-v4.json",
+      "revisionId": "b2b6e7eb-927d-4e4f-89a7-8d3c41b1bcb4",
+      "sha256": "dbc707d958795549ee45268935eb478c528a726ba5bf775c73b9838f35643212"
+    },
+    "C": {
+      "file": "C-profile-v4.json",
+      "revisionId": "360b08a9-710c-4cda-80fa-7d8393181c76",
+      "sha256": "8ccc1b70accf65031a06684ba4f2c5cc4caa9365417e3f7ceee58631a2315b9d"
+    }
+  },
+  "totalDurationMs": 79468,
+  "sources": [
+    {
+      "video": 1,
+      "file": "fd496071f516b77849f9923d34b326e0.mp4",
+      "sha256": "1e9d0eb00b47d808dd1dcb075982b5e20bcb4df83e7502145ec3072122b72523",
+      "runId": "adb1f745-5925-40e4-a23c-69e1cfcb4141",
+      "metrics": {
+        "A": {
+          "intended": 9,
+          "correct": 4,
+          "missed": 5,
+          "wrongClass": 0,
+          "wrongAction": 0,
+          "duplicate": 0,
+          "falseTrigger": 0,
+          "totalTriggers": 4,
+          "rejectionReasons": {
+            "tracking_gap": 11,
+            "unknown": 17
+          }
+        },
+        "B": {
+          "intended": 9,
+          "correct": 6,
+          "missed": 3,
+          "wrongClass": 0,
+          "wrongAction": 0,
+          "duplicate": 0,
+          "falseTrigger": 0,
+          "totalTriggers": 6,
+          "rejectionReasons": {
+            "tracking_gap": 11,
+            "unknown": 15
+          }
+        },
+        "C": {
+          "intended": 9,
+          "correct": 6,
+          "missed": 3,
+          "wrongClass": 0,
+          "wrongAction": 0,
+          "duplicate": 0,
+          "falseTrigger": 0,
+          "totalTriggers": 6,
+          "rejectionReasons": {
+            "tracking_gap": 11,
+            "unknown": 15
+          }
+        }
+      }
+    },
+    {
+      "video": 2,
+      "file": "d1a60c9b224d7198855684871b6a8173.mp4",
+      "sha256": "b84e6e7d4b551b53cdb61aeab174e1da1547415438640265a9a3c0229e4cf823",
+      "runId": "50c2deac-1d27-4c90-a74d-5e8fcbcacee2",
+      "metrics": {
+        "A": {
+          "intended": 4,
+          "correct": 3,
+          "missed": 1,
+          "wrongClass": 0,
+          "wrongAction": 0,
+          "duplicate": 0,
+          "falseTrigger": 0,
+          "totalTriggers": 3,
+          "rejectionReasons": {
+            "tracking_gap": 26,
+            "unknown": 46,
+            "too_short": 1,
+            "too_long": 7,
+            "too_little_motion": 2,
+            "insufficient_tracking": 1
+          }
+        },
+        "B": {
+          "intended": 4,
+          "correct": 3,
+          "missed": 1,
+          "wrongClass": 0,
+          "wrongAction": 0,
+          "duplicate": 0,
+          "falseTrigger": 1,
+          "totalTriggers": 4,
+          "rejectionReasons": {
+            "tracking_gap": 25,
+            "unknown": 45,
+            "too_short": 1,
+            "too_long": 6,
+            "concurrent_gesture": 1,
+            "too_little_motion": 2,
+            "insufficient_tracking": 1
+          }
+        },
+        "C": {
+          "intended": 4,
+          "correct": 3,
+          "missed": 1,
+          "wrongClass": 0,
+          "wrongAction": 0,
+          "duplicate": 0,
+          "falseTrigger": 0,
+          "totalTriggers": 3,
+          "rejectionReasons": {
+            "tracking_gap": 26,
+            "unknown": 46,
+            "too_short": 1,
+            "too_long": 7,
+            "too_little_motion": 2,
+            "insufficient_tracking": 1
+          }
+        }
+      }
+    }
+  ],
+  "totals": {
+    "A": {
+      "intended": 13,
+      "correct": 7,
+      "missed": 6,
+      "wrongClass": 0,
+      "wrongAction": 0,
+      "duplicate": 0,
+      "falseTrigger": 0,
+      "totalTriggers": 7
+    },
+    "B": {
+      "intended": 13,
+      "correct": 9,
+      "missed": 4,
+      "wrongClass": 0,
+      "wrongAction": 0,
+      "duplicate": 0,
+      "falseTrigger": 1,
+      "totalTriggers": 10
+    },
+    "C": {
+      "intended": 13,
+      "correct": 9,
+      "missed": 4,
+      "wrongClass": 0,
+      "wrongAction": 0,
+      "duplicate": 0,
+      "falseTrigger": 0,
+      "totalTriggers": 9
+    }
+  },
+  "classCounts": {
+    "右滑": {
+      "total": 5,
+      "A": 5,
+      "B": 5,
+      "C": 5
+    },
+    "握拳": {
+      "total": 4,
+      "A": 2,
+      "B": 4,
+      "C": 4
+    },
+    "张手": {
+      "total": 4,
+      "A": 0,
+      "B": 0,
+      "C": 0
+    }
+  },
+  "matchTimes": [
+    {
+      "video": 1,
+      "gesture": "右滑",
+      "userNotedMs": 2000,
+      "startMs": 1880,
+      "endMs": 2700,
+      "detections": {
+        "A": 2170,
+        "B": 2170,
+        "C": 2170
+      }
+    },
+    {
+      "video": 1,
+      "gesture": "握拳",
+      "userNotedMs": 4000,
+      "startMs": 3950,
+      "endMs": 5500,
+      "detections": {
+        "A": 4606,
+        "B": 4606,
+        "C": 4606
+      }
+    },
+    {
+      "video": 1,
+      "gesture": "张手",
+      "userNotedMs": 7000,
+      "startMs": 6760,
+      "endMs": 7580,
+      "detections": {
+        "A": null,
+        "B": null,
+        "C": null
+      }
+    },
+    {
+      "video": 1,
+      "gesture": "张手",
+      "userNotedMs": 10000,
+      "startMs": 10240,
+      "endMs": 10960,
+      "detections": {
+        "A": null,
+        "B": null,
+        "C": null
+      }
+    },
+    {
+      "video": 1,
+      "gesture": "握拳",
+      "userNotedMs": 14000,
+      "startMs": 12910,
+      "endMs": 14330,
+      "detections": {
+        "A": null,
+        "B": 13685,
+        "C": 13685
+      }
+    },
+    {
+      "video": 1,
+      "gesture": "右滑",
+      "userNotedMs": 15000,
+      "startMs": 15090,
+      "endMs": 15810,
+      "detections": {
+        "A": 15354,
+        "B": 15354,
+        "C": 15354
+      }
+    },
+    {
+      "video": 1,
+      "gesture": "握拳",
+      "userNotedMs": 19000,
+      "startMs": 18430,
+      "endMs": 19410,
+      "detections": {
+        "A": null,
+        "B": 18992,
+        "C": 18992
+      }
+    },
+    {
+      "video": 1,
+      "gesture": "张手",
+      "userNotedMs": 21000,
+      "startMs": 20400,
+      "endMs": 20840,
+      "detections": {
+        "A": null,
+        "B": null,
+        "C": null
+      }
+    },
+    {
+      "video": 1,
+      "gesture": "右滑",
+      "userNotedMs": 23000,
+      "startMs": 22950,
+      "endMs": 23860,
+      "detections": {
+        "A": 23298,
+        "B": 23298,
+        "C": 23298
+      }
+    },
+    {
+      "video": 2,
+      "gesture": "右滑",
+      "userNotedMs": 24000,
+      "startMs": 23900,
+      "endMs": 24720,
+      "detections": {
+        "A": 24267,
+        "B": 24267,
+        "C": 24267
+      }
+    },
+    {
+      "video": 2,
+      "gesture": "握拳",
+      "userNotedMs": 31000,
+      "startMs": 30930,
+      "endMs": 31980,
+      "detections": {
+        "A": 31568,
+        "B": 31568,
+        "C": 31568
+      }
+    },
+    {
+      "video": 2,
+      "gesture": "张手",
+      "userNotedMs": 39000,
+      "startMs": 39200,
+      "endMs": 39920,
+      "detections": {
+        "A": null,
+        "B": null,
+        "C": null
+      }
+    },
+    {
+      "video": 2,
+      "gesture": "右滑",
+      "userNotedMs": 47000,
+      "startMs": 46620,
+      "endMs": 47480,
+      "detections": {
+        "A": 46935,
+        "B": 46935,
+        "C": 46935
+      }
+    }
+  ]
+}

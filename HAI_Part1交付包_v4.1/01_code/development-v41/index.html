@@ -1,0 +1,21 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>手势识别验证</title>
+<style>
+body{font:16px system-ui,sans-serif;max-width:780px;margin:32px auto;padding:0 18px;background:#f4f7fa;color:#182838}
+button,input,select{font:inherit;margin:4px;padding:6px}video{display:block;width:min(100%,560px);background:#14202a;border-radius:8px}pre{white-space:pre-wrap}
+</style>
+<h1>手势识别开发验证 4.1</h1>
+<p>面对摄像头，右手向身体右侧滑动。预览为镜像，画面中的手也向右移动。</p>
+<button id="camera">启动摄像头</button><button id="stop">停止</button>
+<label>录像 <input id="file" type="file" accept="video/*"></label>
+<label><input id="mirrored" type="checkbox">上传录像已经过镜像处理（选择录像前设置）</label>
+<video id="video" muted playsinline></video>
+<p id="tracking" role="status">等待摄像头 · 开发版 4.1 · 待实时验收</p>
+<p><button id="record">录制正例</button><button id="finish">结束示范</button><button id="undo">删除最近正例</button></p>
+<p><button id="load">加载配置</button><input id="json" type="file" accept=".json" hidden>
+<button id="save">导出配置</button><button id="log">导出轨迹与事件</button></p>
+<p><button id="replay">加载轨迹回放</button><input id="trajectory" type="file" accept=".json" hidden></p>
+<p id="status" role="status">先启动摄像头，或加载配置后选择录像。</p>
+<p id="state"></p><pre id="events"></pre>
+<script type="module" src="./demo.mjs?v=41"></script>
+</html>

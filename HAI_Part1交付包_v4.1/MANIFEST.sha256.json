@@ -1,0 +1,239 @@
+{
+  "files": [
+    {
+      "path": "01_code/check-custom.mjs",
+      "bytes": 22730,
+      "sha256": "87d6b91c7f05e4266e7668401a5684c5f4a8a8b27c0d5692538b4bbc0110d58a"
+    },
+    {
+      "path": "01_code/check-development.mjs",
+      "bytes": 3875,
+      "sha256": "c9f612ce2eb2ef3416b8120422932334011825c4572da9fe55a21046bc13aa8b"
+    },
+    {
+      "path": "01_code/coordinates.mjs",
+      "bytes": 218,
+      "sha256": "c89a8e38a84083c44e2d5f8a4b0adb9cacab94d19c0954a3a75ea8a053748553"
+    },
+    {
+      "path": "01_code/custom-gestures/actions.mjs",
+      "bytes": 891,
+      "sha256": "e9adfc310211f452d283321a6f65b49041a84f189f2b43f8c229294b13dd97f8"
+    },
+    {
+      "path": "01_code/custom-gestures/auto-study.mjs",
+      "bytes": 10273,
+      "sha256": "2123b572a53098ba73bb98216a839bcf8ac5117626aa7b746b0fc2b496769ea9"
+    },
+    {
+      "path": "01_code/custom-gestures/demo.mjs",
+      "bytes": 19330,
+      "sha256": "19739b855bfb6ea61297132b154f47e511a9c6150bad6d00176f21b3a69f6d29"
+    },
+    {
+      "path": "01_code/custom-gestures/hand-features.mjs",
+      "bytes": 5805,
+      "sha256": "082f185132859a7cce81feaaf645c3eda50654fd099eb95a97039a7de9f75761"
+    },
+    {
+      "path": "01_code/custom-gestures/hand-tracks.mjs",
+      "bytes": 3961,
+      "sha256": "a5a8165f43eee351205dd684987a2bd61f967eebd324273031dc40c429cca23c"
+    },
+    {
+      "path": "01_code/custom-gestures/index.html",
+      "bytes": 5151,
+      "sha256": "3353eea5299cf1eab53828eece91a4ab4cfa2d2d13eda89d25887846ffa75455"
+    },
+    {
+      "path": "01_code/custom-gestures/profile.mjs",
+      "bytes": 11377,
+      "sha256": "e54ce11cb22867c2033939d5beb4dcfdc4f50e39b96311d3bf5622683a8a3445"
+    },
+    {
+      "path": "01_code/custom-gestures/recognizer.mjs",
+      "bytes": 15501,
+      "sha256": "190244c1684aca99f4c50703fe662192865f922d4738e63312cf8cfb797d4e2a"
+    },
+    {
+      "path": "01_code/custom-gestures/study-exchange.mjs",
+      "bytes": 5252,
+      "sha256": "d617ee32b708ff1ca10c8bc50b438ce7fcc90aa9f0aad6fb1b274229653d7d27"
+    },
+    {
+      "path": "01_code/custom-gestures/study.mjs",
+      "bytes": 10541,
+      "sha256": "77c2786d5537497a3296e95ec895b238bc3c4f9ec278c2ac22f86531aa75fbe2"
+    },
+    {
+      "path": "01_code/custom-gestures/styles.css",
+      "bytes": 2994,
+      "sha256": "2111fdcf1f240398279e27d41fde95c8e62baf676de68015176f5c6af959f081"
+    },
+    {
+      "path": "01_code/custom-gestures/trajectory.mjs",
+      "bytes": 7547,
+      "sha256": "e7a28fea5b12df794c5bca27fb8760c834f0895e3c6e2d587f6e058da0f42db1"
+    },
+    {
+      "path": "01_code/custom-gestures/video-study-worker.mjs",
+      "bytes": 1258,
+      "sha256": "1abae1f25acef6c5f8fbd976cbd6f46b7d51fbc97bde809123fb1a8b893f0955"
+    },
+    {
+      "path": "01_code/custom-gestures/video-study.html",
+      "bytes": 4675,
+      "sha256": "5e7da361fc19fc1ae452c2a13002978ef157553a110e09f8528b556586e6cbd1"
+    },
+    {
+      "path": "01_code/custom-gestures/video-study.mjs",
+      "bytes": 7540,
+      "sha256": "73d99e90df0b3b5d0bfc6be5b5110c822850d790a8e7d236c4f9c45981430ced"
+    },
+    {
+      "path": "01_code/development-v41/demo.mjs",
+      "bytes": 6076,
+      "sha256": "8867e075c1efd02c1afd4a83cdc0b28a229a2b234869db5e323887984f5ceb0a"
+    },
+    {
+      "path": "01_code/development-v41/index.html",
+      "bytes": 1636,
+      "sha256": "583e60310c9c3d706d3cd86598612af0888e320be5c2c99f79b26c35cb0f2773"
+    },
+    {
+      "path": "01_code/development-v41/recognizer-development.mjs",
+      "bytes": 6903,
+      "sha256": "1d0a87e9fffbb1d778781d2645fd40e5b286814a7ca8588efad2d5b6362c71bd"
+    },
+    {
+      "path": "01_code/extract-study-video.py",
+      "bytes": 4812,
+      "sha256": "3766ee7855b3b87d49a388f770ad1636a0eeb8f860154f95bfc7d8917c2bbce1"
+    },
+    {
+      "path": "01_code/hand-selection.mjs",
+      "bytes": 609,
+      "sha256": "9f8f92f1a8623c460bcaebbd97157bd95c6b0b04fbc89d7620f6fad668444448"
+    },
+    {
+      "path": "01_code/replay-run.mjs",
+      "bytes": 1098,
+      "sha256": "1306de58979b9b30c621b36faff7f1f79d4d8c5f230942e811c3b8803b3b68f7"
+    },
+    {
+      "path": "01_code/start-custom-gestures.cmd",
+      "bytes": 381,
+      "sha256": "3ced34b03ce1edb1051afd896d396bcd25afad940f97dc1984cbdd904d7833d6"
+    },
+    {
+      "path": "01_code/start-development.cmd",
+      "bytes": 239,
+      "sha256": "513ef81f1c013c099c69baa4f1dd1c7690840192bb1eef95b0c4d774a7e271fb"
+    },
+    {
+      "path": "01_code/study-video.mjs",
+      "bytes": 7976,
+      "sha256": "0558c76626721dae1295bc884f1ea69843d89a72159b90048918fccafb91e581"
+    },
+    {
+      "path": "01_code/tracker.mjs",
+      "bytes": 4486,
+      "sha256": "d16864195deacaf708e6f570de8cc675ff07b86b17539bf4a36acafd937db06e"
+    },
+    {
+      "path": "01_code/vendor/LICENSE-mediapipe.txt",
+      "bytes": 12331,
+      "sha256": "8707eef0533987efc5b155d64761eeb6e20793f50b9bd1a68dad1cf4719d0ed8"
+    },
+    {
+      "path": "01_code/vendor/hand_landmarker.task",
+      "bytes": 7819105,
+      "sha256": "fbc2a30080c3c557093b5ddfc334698132eb341044ccee322ccf8bcf3607cde1"
+    },
+    {
+      "path": "01_code/vendor/vision_bundle.mjs",
+      "bytes": 137735,
+      "sha256": "40f4123dfcd75cfa58add046919cc6f52fde66f009ff582997c09ba54c6ba27c"
+    },
+    {
+      "path": "01_code/vendor/wasm/vision_wasm_internal.js",
+      "bytes": 204284,
+      "sha256": "4a97e2520ba506c680ecd6ba6acfb146888afa0e2746d57f205352bc6ebb82eb"
+    },
+    {
+      "path": "01_code/vendor/wasm/vision_wasm_internal.wasm",
+      "bytes": 9574032,
+      "sha256": "f00ec4731faa23b3e714d00e88d4d10e2df5c0a427d3a2b4ae6e3526fdd14ef7"
+    },
+    {
+      "path": "01_code/vendor/wasm/vision_wasm_nosimd_internal.js",
+      "bytes": 204137,
+      "sha256": "927def7b465c51b86e4b3060f93646aca4e27121f4b8fc0483786e407ea9cf1f"
+    },
+    {
+      "path": "01_code/vendor/wasm/vision_wasm_nosimd_internal.wasm",
+      "bytes": 9448638,
+      "sha256": "3821ea9b1f7fb8c549ef2a064ef5c85750bf375c545a49fd6eea0df44a95f1f4"
+    },
+    {
+      "path": "02_profiles/P01_calibrated-profile_v4.1-development.json",
+      "bytes": 3570894,
+      "sha256": "8c720062ab05db8a541f068da66efe44e548b0f1aefaf425a3c1058cb35cd57c"
+    },
+    {
+      "path": "02_profiles/P01_initial-profile_v4.json",
+      "bytes": 430389,
+      "sha256": "0d1e252cfc17452d32a14c91649415ad8e6d202089997047c2c81eb1d06f3535"
+    },
+    {
+      "path": "03_validation/P01_livecheck-v41-command-run.json",
+      "bytes": 5379458,
+      "sha256": "8d523668ae2f4049edb3b62e1b61c5f17911be659c7e49f7c25119051f9b9583"
+    },
+    {
+      "path": "03_validation/P01_livecheck-v41-command-screen.mp4",
+      "bytes": 60729242,
+      "sha256": "e2694963268964395061d738b8b49c9553c6e291fc7f13ec0a317aab82efa860"
+    },
+    {
+      "path": "03_validation/P01_livecheck-v41-natural-run.json",
+      "bytes": 10442998,
+      "sha256": "a5c699083f7ae97a6a8c41f46cf1cd3d5c16377d79e2c6612773c84afd373b44"
+    },
+    {
+      "path": "03_validation/P01_livecheck-v41-natural-screen.mp4",
+      "bytes": 128588118,
+      "sha256": "b8629790a4b27b7b02de2d48942c0e179dbebe5f4768081e2c96b66f35475d69"
+    },
+    {
+      "path": "03_validation/P01_livecheck-v41-review.md",
+      "bytes": 3804,
+      "sha256": "e02de3499d9c05c7d756d7ee2a172fe1783ccc1916cda1cb98cb5198c0848462"
+    },
+    {
+      "path": "03_validation/P01_livecheck-v41-summary.json",
+      "bytes": 2389,
+      "sha256": "c32638451c05f6be1d124b6cec5fa3c6ef20ffe515f4fd6869193cf74952dbfe"
+    },
+    {
+      "path": "04_docs/成员2_接口接入.md",
+      "bytes": 5087,
+      "sha256": "f91985b8de24b97cfd2e1bad8021203b28d1c0aca329a061f737a0c8376a30e0"
+    },
+    {
+      "path": "04_docs/成员3_校准与实验.md",
+      "bytes": 5451,
+      "sha256": "4f787ec0f91625651fad5bed7a720d7ab2cf7b1e2ede2fa066d916f00c00b088"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 1398,
+      "sha256": "c5734f47359c51156515892cbdb3de94f20ea1dc7d03ecd22fd5166c3c962bb1"
+    },
+    {
+      "path": "README.txt",
+      "bytes": 5030,
+      "sha256": "127a11011e465f390829275fd8327d9b9ce604eb88b3360ae1347512b3ad3113"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Human Project · 自定义手势</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main>
+    <header class="heading">
+      <div>
+        <h1>自定义手势</h1>
+        <p>示范静态手型或短动态动作，并绑定演示页操作。</p>
+      </div>
+      <a href="../development-v41/index.html">旧版 4.1 验证页</a>
+    </header>
+
+    <p id="status" role="status">新建手势，或导入已有配置。</p>
+
+    <div class="workspace">
+      <section aria-labelledby="setupTitle">
+        <h2 id="setupTitle">手势配置</h2>
+        <form id="participantForm" class="row">
+          <label class="grow">参与者编号 <input id="participantId" type="text" placeholder="例如 P02"></label>
+          <button type="submit">保存编号</button>
+        </form>
+        <div class="row">
+          <button id="loadProfile">导入配置</button>
+          <input type="file" id="profileFile" accept=".json,application/json" hidden>
+          <button id="saveProfile">导出配置</button>
+        </div>
+        <hr>
+        <form id="addForm" class="row">
+          <label class="grow">新手势名称 <input id="newName" type="text" required placeholder="例如 捏合或画圈"></label>
+          <label class="grow">类型
+            <select id="newType">
+              <option value="dynamic">短动态动作</option>
+              <option value="static">静态手型</option>
+            </select>
+          </label>
+          <button type="submit">添加手势</button>
+        </form>
+        <label>当前手势 <select id="gesture"></select></label>
+        <form id="editForm">
+          <div class="row">
+            <label class="grow">名称 <input id="gestureName" required></label>
+            <label class="grow">绑定功能 <select id="action"></select></label>
+          </div>
+          <details>
+            <summary>类别参数</summary>
+            <div class="row">
+              <label class="grow">匹配距离阈值 <input type="number" id="threshold" min="0" step="any" required></label>
+              <label class="grow">反例所需距离差 <input type="number" id="negativeMargin" min="0" step="any" required></label>
+            </div>
+          </details>
+          <div class="row">
+            <button type="submit">保存手势设置</button>
+            <button type="button" id="deleteGesture" class="quiet">删除手势</button>
+          </div>
+        </form>
+        <p id="sampleCount"></p>
+        <ul id="samples" aria-label="手势样例"></ul>
+      </section>
+
+      <section aria-labelledby="captureTitle">
+        <h2 id="captureTitle">摄像头与轨迹</h2>
+        <div class="row">
+          <button id="openCapture" class="primary">启动摄像头注册</button>
+          <button id="openRecognition">启动摄像头识别</button>
+          <button id="stop">停止</button>
+        </div>
+        <div class="slide" role="group" aria-label="翻页演示" aria-live="polite">
+          <p id="pageNumber">第 1 / 3 页</p>
+          <p id="cardTitle">开场</p>
+          <p id="controlState">手势翻页已启用</p>
+        </div>
+        <video id="video" muted playsinline aria-label="摄像头或视频预览"></video>
+        <p id="tracking">摄像头未启动</p>
+        <div class="row">
+          <button id="recordPositive">录制正例</button>
+          <button id="recordNegative">录制反例</button>
+          <button id="finishRecording">结束示范</button>
+        </div>
+        <p class="hint">可以先点击录制，再把手放进画面。静态手型摆稳后结束，短动态做一次并稍停再结束。反例用于排除容易被误认成这类手势的姿势或动作。</p>
+        <hr>
+        <label class="check"><input id="mirrored" type="checkbox">上传的原始摄像头录像已经镜像</label>
+        <div class="row">
+          <button id="openVideo">分析原始录像</button>
+          <input type="file" id="videoFile" accept="video/*" hidden>
+          <button id="openReplay">回放轨迹 JSON</button>
+          <input type="file" id="runFile" accept=".json,application/json" hidden>
+        </div>
+        <p class="hint">导出记录保存关键点与识别事件。需要原视频时请另行录制。</p>
+      </section>
+
+      <section class="log" aria-labelledby="logTitle">
+        <h2 id="logTitle">识别日志</h2>
+        <div class="row">
+          <label class="grow">本次打开页面的运行记录 <select id="runs"></select></label>
+          <button id="exportRun">导出轨迹与事件</button>
+        </div>
+        <p id="summary">暂无运行记录。</p>
+        <details open>
+          <summary>最近 20 条事件与拒绝</summary>
+          <ol id="entries"></ol>
+        </details>
+      </section>
+    </div>
+  </main>
+  <script type="module" src="./demo.mjs?v=3.1"></script>
+</body>
+</html>
