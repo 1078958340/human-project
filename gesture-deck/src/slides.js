@@ -88,11 +88,18 @@ export function setupSlides() {
     displayed = painted.then(didPaint => didPaint && token === paintId ? new Promise(resolve => {
       // A second animation frame lets the browser paint the new page first.
       // Background tabs may never schedule a frame, so omit their timing.
-      const deadline = setTimeout(() => resolve(null), 180);
-      requestAnimationFrame(() => requestAnimationFrame(time => {
-        clearTimeout(deadline);
-        resolve(token === paintId && !document.hidden ? time : null);
-      }));
+      let frame;
+      const deadline = setTimeout(() => {
+        cancelAnimationFrame(frame);
+        resolve(null);
+      }, 180);
+      frame = requestAnimationFrame(() => {
+        frame = requestAnimationFrame(() => {
+          clearTimeout(deadline);
+          // Sample the same clock as dispatch. The animation timestamp can describe an earlier frame.
+          resolve(token === paintId && !document.hidden ? performance.now() : null);
+        });
+      });
     }) : null);
   }
 
