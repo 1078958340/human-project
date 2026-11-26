@@ -1,42 +1,32 @@
-# Human Project · 手势控制
+# Human Project · 手势放映台
 
-用摄像头注册静态或短动态手势，在演示中触发翻页，并从标注视频学习正反例。暂定流程为「注册示范 → 视频校准 → 冻结 A/B/C → 新视频评估」。原型已完成，当前进入成员 2 的界面、用户流程和播放器集成阶段。
+用摄像头注册静态或短动态手势，根据标注试讲学习正反例，再用个人配置控制 PDF 或图片幻灯片。试讲校准可冻结 A/B/C 三组配置，在另一段素材上回放评估。
 
 ## 快速运行
 
-在仓库根目录打开 PowerShell，进入代码目录后启动本地服务。
-
 ```powershell
-Set-Location -LiteralPath "./HAI_Part1交付包_v4.1/01_code"
-.\start-custom-gestures.cmd
+Set-Location -LiteralPath "./gesture-deck"
+npm ci
+npm run dev
 ```
 
-- [手势注册与识别演示](http://localhost:8766/custom-gestures/index.html)
-- [视频学习与评估](http://localhost:8766/custom-gestures/video-study.html)
+在 Chrome 或 Edge 打开 [手势放映台](http://127.0.0.1:4178/)。需要 Node.js 22.13+（22 系列）或 24+。Windows 下也可双击 `gesture-deck/start-demo.cmd`，让启动器构建并启动项目。首次安装依赖需要联网，构建后的浏览器运行使用本地模型与资源。
 
-网页生成的 A、B、C 统一使用较灵敏设置。回放按实验包内冻结的配置运行。
+在 `gesture-deck/` 运行 `npm test` 检查引擎回归，运行 `npm run build` 生成静态产物。已有校准轨迹可用于无摄像头复现注册配置导入、标注、学习、独立评估与实际翻页。[完整使用与复现步骤](gesture-deck/README.md)
 
-浏览器运行依赖随仓库提供的 MediaPipe 模型和 WASM。两段历史录屏通过 Git LFS 管理。克隆后如看到录屏指针文件，在仓库根目录运行 `git lfs pull`。
+## 技术分析
+
+记录了同轨迹改动前后的校准耗时、A/B/C 对照、目前验证的边界，以及分阶段的算法和流程改进建议。[技术复盘与答辩建议](gesture-deck/TECHNICAL-REVIEW.md)
 
 ## 仓库内容
 
 | 位置 | 内容 |
 | --- | --- |
-| [HAI_Part1交付包_v4.1](HAI_Part1交付包_v4.1/) | 当前源码、启动器、测试脚本、MediaPipe 资源及旧版基线 |
+| [gesture-deck](gesture-deck/) | 三部分联调版的应用入口、源码、模型、启动器和示例 |
+| [HAI_Part1交付包_v4.1](HAI_Part1交付包_v4.1/) | 注册与视频学习原型、旧版 4.1 基线和实验说明 |
 | [P02_calibration](P02_calibration/) | 校准轨迹、标注、冻结配置和独立验证报告 |
 | [P111_video_study](P111_video_study/) | 较灵敏匹配、既有视频复测，以及浏览器学习和回放证据 |
 | [成员 2 接入与分工](TEAM_HANDOFF.md) | 贡献说明、接口、界面任务和下一阶段安排 |
 | [历史交接记录](CODEX_HANDOFF.md) | 迭代背景和主要版本变化 |
 
-暂定流程的浏览器操作、CLI 入口和实验方法详见[成员 3 的标注与实验说明](HAI_Part1交付包_v4.1/04_docs/成员3_校准与实验.md)。源代码备份按原目录保存在仓库根目录，可用作历史对照。实验目录里的关键点轨迹可用于复现已有回放。
-
-## 本地检查
-
-在 `HAI_Part1交付包_v4.1` 内运行以下命令。
-
-```powershell
-node ./01_code/check-custom.mjs
-node ./01_code/check-development.mjs
-```
-
-两项检查覆盖当前手势流程与旧版回归。真人数据和实验结论的适用范围请以各自报告为准。
+历史录屏通过 Git LFS 管理。如需查看录屏，在仓库根目录运行 `git lfs pull`。实验标注方法和时间基准详见[成员 3 的校准与实验说明](HAI_Part1交付包_v4.1/04_docs/成员3_校准与实验.md)。

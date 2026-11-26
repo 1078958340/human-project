@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#10182f">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <title>手势放映台</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#record" aria-label="手势放映台首页">
+          <span class="brand-mark" data-icon="gesture-screen"></span>
+          <strong>手势放映台</strong><small>GESTURE DECK</small>
+        </a>
+        <div class="header-actions">
+          <span class="mode live"><i></i> 本地识别</span>
+          <button type="button" id="load-demo" class="button"><span data-icon="play"></span>体验放映示例</button>
+        </div>
+      </div>
+    </header>
+    <main class="workspace">
+      <nav class="steps" aria-label="操作流程">
+        <a id="nav-record" class="step" href="#record"><span data-icon="video"></span>录手势</a>
+        <i class="step-divider" aria-hidden="true"></i>
+        <a id="nav-rehearse" class="step" href="#rehearse"><span data-icon="settings"></span>试讲校准</a>
+        <i class="step-divider" aria-hidden="true"></i>
+        <a id="nav-present" class="step" href="#present"><span data-icon="screen"></span>正式放映</a>
+      </nav>
+      <section id="record" class="stage" aria-labelledby="record-title">
+        <header class="stage-heading">
+          <div class="heading-copy"><h1 id="record-title">录手势</h1><p>录制静态手型或短动态手势，再绑定放映动作。</p></div>
+          <div class="action-row">
+            <button type="button" id="import-personal" class="button"><span data-icon="folder"></span>导入个人配置</button>
+            <input id="register-profile-file" type="file" accept="application/json,.json" hidden>
+            <button type="button" id="export-personal" class="button">导出个人配置</button>
+          </div>
+        </header>
+        <div class="grid record-grid">
+          <section class="card camera-card" aria-labelledby="camera-title">
+            <div class="card-head"><h2 id="camera-title"><span data-icon="video"></span>摄像头</h2><span id="camera-status" class="tag">未开启</span></div>
+            <div class="viewfinder" id="viewfinder">
+              <video id="camera" autoplay muted playsinline aria-label="实时摄像头预览" hidden></video>
+              <video id="sample-player" controls playsinline aria-label="手势录制回放" hidden></video>
+              <canvas id="sample-canvas" class="sample-canvas" width="640" height="360" aria-label="示范关键点回放" hidden></canvas>
+              <div id="camera-placeholder" class="camera-placeholder">
+                <div class="gesture-guide" aria-hidden="true"><span data-icon="hand"></span><span class="gesture-direction" data-icon="motion-right"></span></div>
+                <strong>摄像头待开启</strong>
+                <small>开启后将手放入预览画面</small>
+              </div>
+              <div class="frame-corners" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+              <span id="camera-timer" class="rec-timer" hidden></span>
+            </div>
+            <div class="action-row camera-actions">
+              <button type="button" class="button primary" id="toggle-camera"><span data-icon="video"></span><span id="camera-action">开启摄像头</span></button>
+              <button type="button" class="button" id="record-sample" disabled><span data-icon="record"></span><span id="record-action">录制示范</span></button>
+              <button type="button" class="button" id="close-sample" hidden>关闭回放</button>
+            </div>
+            <p id="record-help" class="record-help"></p>
+          </section>
+          <div class="record-side">
+            <section class="card registration-card" aria-labelledby="samples-title">
+              <div class="card-head"><h2 id="samples-title"><span data-icon="layers"></span>手势配置</h2><span id="sample-count" class="tag accent"></span></div>
+              <div class="field-pair">
+                <label class="select-label">参与者编号<input id="participant" type="text" maxlength="32" placeholder="例如 P03" autocomplete="off"></label>
+                <label class="select-label">当前手势<select id="gesture"></select></label>
+              </div>
+              <div id="gesture-edit" class="config-fields">
+                <div class="field-pair">
+                  <label class="select-label">名称<input id="gesture-name" type="text" maxlength="40" autocomplete="off"></label>
+                  <label class="select-label">绑定动作<select id="gesture-action"></select></label>
+                </div>
+                <div class="action-row between"><span id="gesture-kind" class="tag"></span><button type="button" id="delete-gesture" class="button small ghost danger">删除手势</button></div>
+              </div>
+              <ol id="samples" class="samples"></ol>
+              <details class="add-gesture">
+                <summary>添加手势</summary>
+                <form id="add-gesture-form" class="config-fields">
+                  <div class="field-pair">
+                    <label class="select-label">新手势名称<input id="new-gesture-name" type="text" maxlength="40" required autocomplete="off" placeholder="例如 握拳"></label>
+                    <label class="select-label">类型<select id="new-gesture-type"><option value="static">静态手型</option><option value="dynamic">短动态动作</option></select></label>
+                  </div>
+                  <button type="submit" id="add-gesture" class="button small">添加</button>
+                </form>
+              </details>
+            </section>
+            <section class="card try-area" aria-labelledby="try-title">
+              <div class="card-head"><h2 id="try-title"><span data-icon="play"></span>试翻页</h2></div>
+              <div class="try-controls">
+                <output id="try-page" class="page-counter" aria-live="polite">01</output>
+                <div class="action-row"><button type="button" id="start-try" class="button">开始手势试用</button><button type="button" id="reset-try" class="button small ghost">重置</button></div>
+              </div>
+              <p id="try-hint"></p>
+              <output id="try-event" class="live-detail"></output>
+            </section>
+            <a class="button primary advance-stage" href="#rehearse">进入试讲校准</a>
+          </div>
+        </div>
+      </section>
+      <section id="rehearse" class="stage" aria-labelledby="rehearse-title" hidden>
+        <header class="stage-heading">
+          <div class="heading-copy"><h1 id="rehearse-title">试讲校准</h1><p>标记主动手势的起止区间，生成校准配置或回放独立试讲。</p></div>
+          <div class="action-row">
+            <button type="button" class="button" id="example-rehearsal">查看标记示例</button>
+            <button type="button" class="button primary" id="choose-video"><span data-icon="upload"></span>选择试讲素材</button>
+            <input id="video-file" type="file" accept="video/*,.mp4,.webm,.mov,.m4v,.json,application/json" hidden>
+          </div>
+        </header>
+        <div class="grid rehearsal-grid">
+          <section class="card" aria-labelledby="rehearsal-video-title">
+            <div class="card-head"><h2 id="rehearsal-video-title"><span data-icon="play"></span>试讲素材</h2><span id="rehearsal-name" class="tag truncate">未选择文件</span></div>
+            <div class="viewfinder rehearsal-view">
+              <div id="rehearsal-empty" class="camera-placeholder"><div class="camera-reticle"><span data-icon="play"></span></div><strong id="rehearsal-empty-title">等待原视频或轨迹</strong><small id="rehearsal-empty-tip">选择素材后在时间轴标记手势区间</small></div>
+              <video id="rehearsal-video" controls playsinline preload="metadata" aria-label="试讲视频和回看片段" hidden></video>
+            </div>
+            <div class="timeline-box">
+              <div class="timeline-label"><strong>媒体时间轴</strong><output id="video-time">00:00 / 00:00</output></div>
+              <div class="tracks">
+                <input id="scrub" type="range" min="0" max="1" value="0" step="1" aria-label="跳转到视频时间" disabled>
+                <div id="timeline-marks" class="timeline-marks"></div>
+              </div>
+              <div class="legend"><span><i class="mark-dot"></i>主动手势区间</span><span><i class="trigger-dot"></i>识别触发</span></div>
+              <fieldset class="mark-controls" id="annotation-controls">
+                <label class="select-label">目标手势<select id="label-gesture"></select></label>
+                <div class="action-row timeline-actions">
+                  <button type="button" class="button small" id="mark-start"><span data-icon="pin"></span><span id="mark-start-label">标记起手</span></button>
+                  <button type="button" class="button small" id="mark-end">标记结束</button>
+                  <button type="button" class="button small ghost" id="cancel-mark" hidden>取消标记</button>
+                </div>
+                <output id="pending-mark" class="live-detail"></output>
+              </fieldset>
+              <ul id="marker-list" class="marker-list interval-list" aria-label="已标注的手势区间"></ul>
+              <div class="study-options">
+                <label class="check-label" id="mirror-row" hidden><input id="study-mirror" type="checkbox"> 原视频已经镜像</label>
+                <label class="check-label"><input id="no-command" type="checkbox"> 本段没有主动手势</label>
+                <div class="action-row">
+                  <button type="button" class="button small" id="import-labels">导入标注 JSON</button>
+                  <input id="labels-file" type="file" accept="application/json,.json" hidden>
+                  <button type="button" class="button small ghost" id="clear-labels" hidden>移除导入标注</button>
+                  <span id="labels-name" class="live-detail"></span>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="card review-card" aria-labelledby="review-title">
+            <div class="card-head"><h2 id="review-title"><span data-icon="checklist"></span>学习与对照</h2></div>
+            <label class="select-label">本轮任务<select id="study-mode"><option value="learn">校准学习</option><option value="evaluate">独立视频评估</option></select></label>
+            <div class="study-config">
+              <p id="study-config-summary" class="live-detail"></p>
+              <button type="button" class="button small" id="study-import-config">导入个人配置</button>
+              <input id="study-config-file" type="file" accept="application/json,.json" hidden>
+            </div>
+            <p id="review-hint"></p>
+            <div class="action-row">
+              <button type="button" class="button primary" id="analyze" disabled><span data-icon="timeline"></span><span id="analyze-label">开始学习</span></button>
+              <button type="button" class="button small" id="cancel-study" hidden>取消</button>
+            </div>
+            <output id="review-progress" class="study-progress" aria-live="polite"></output>
+            <div id="study-results" hidden>
+              <p id="match-summary" class="match-summary"></p>
+              <div class="table-scroll">
+                <table class="study-table" aria-label="A/B/C 结果">
+                  <thead><tr><th>组别</th><th>命中</th><th>漏检</th><th>误触</th><th>重复</th><th>错类</th><th>错动作</th></tr></thead>
+                  <tbody id="study-rows"></tbody>
+                </table>
+              </div>
+              <label class="select-label review-group">回看片段<select id="review-group"><option value="A">A · 原示范</option><option value="B">B · 补正例</option><option value="C">C · 补反例</option></select></label>
+              <div id="review-list" class="review-list"></div>
+              <div class="review-footer">
+                <div class="action-row">
+                  <button type="button" class="button primary" id="use-calibration">用 C 配置放映</button>
+                  <button type="button" class="button small" id="export-calibration">导出 C</button>
+                  <button type="button" class="button small" id="export-bundle">导出冻结 A/B/C</button>
+                  <button type="button" class="button small" id="export-report">导出报告</button>
+                  <button type="button" class="button small" id="export-study-run">导出轨迹</button>
+                  <button type="button" class="button small" id="export-labels">导出标注</button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="stage-footer"><a class="button ghost" href="#record">返回录手势</a><a class="button primary" href="#present">进入正式放映</a></div>
+      </section>
+      <section id="present" class="stage" aria-labelledby="present-title" hidden>
+        <header class="stage-heading">
+          <div class="heading-copy"><h1 id="present-title">正式放映</h1><p>导入从 PPT 导出的 PDF，或选择多张幻灯片图片。</p></div>
+          <div class="action-row">
+            <button type="button" class="button" id="example-slides">载入示例幻灯片</button>
+            <button type="button" class="button primary" id="choose-slides"><span data-icon="upload"></span>导入幻灯片</button>
+            <input id="slide-file" type="file" accept="application/pdf,.pdf,image/*" multiple hidden>
+          </div>
+        </header>
+        <div class="grid presentation-grid">
+          <section class="card" aria-labelledby="slides-title">
+            <div class="card-head"><h2 id="slides-title"><span data-icon="screen"></span>幻灯片播放器</h2><span id="deck-name" class="tag truncate">未导入</span></div>
+            <div id="player" class="player" tabindex="0" aria-label="幻灯片播放器，用空格或方向键翻页">
+              <div id="slide-stage" class="slide-stage">
+                <div class="camera-placeholder"><div class="camera-reticle"><span data-icon="layers"></span></div><strong>等待导入幻灯片</strong><small>支持一个 PDF 或多张图片</small></div>
+              </div>
+              <div class="player-bar">
+                <button type="button" class="button small" id="prev-slide" disabled>上一页</button>
+                <output id="slide-page" aria-live="polite">0 / 0</output>
+                <button type="button" class="button small" id="next-slide" disabled>下一页</button>
+                <output id="slide-control-state" class="slide-control-state" hidden></output>
+                <button type="button" class="button small fullscreen" id="fullscreen" disabled><span data-icon="expand"></span><span id="fullscreen-label">全屏</span></button>
+              </div>
+            </div>
+          </section>
+          <section class="card controls-card" aria-labelledby="controls-title">
+            <div class="card-head"><h2 id="controls-title"><span data-icon="settings"></span>放映控制</h2></div>
+            <label class="select-label">识别配置<select id="profile"></select></label>
+            <p id="profile-hint"></p>
+            <ul id="bindings" class="binding-list" aria-label="当前手势绑定"></ul>
+            <div class="action-row">
+              <button type="button" class="button small" id="import-present-profile">导入配置或 A/B/C 包</button>
+              <input id="present-profile-file" type="file" accept="application/json,.json" hidden>
+            </div>
+            <div class="action-row">
+              <button type="button" class="button primary" id="start-present">开启手势控制</button>
+              <button type="button" class="button small" id="toggle-present" hidden>暂停手势翻页</button>
+            </div>
+            <output id="present-hint" class="live-detail" aria-live="polite"></output>
+            <div class="mini-preview" id="present-preview" hidden><video id="present-camera" autoplay muted playsinline aria-label="放映时的摄像头预览"></video></div>
+            <div class="last-event"><strong>最近动作</strong><output id="present-event" aria-live="polite">暂无</output></div>
+            <section class="replay-controls" aria-labelledby="replay-title">
+              <h3 id="replay-title">轨迹回放与记录</h3>
+              <p id="replay-hint">选用配套配置和轨迹 JSON，从第一页快速回放。</p>
+              <label id="history-row" class="select-label" hidden>本会话记录<select id="run-history"></select></label>
+              <div class="action-row">
+                <button type="button" class="button small" id="choose-replay">回放轨迹</button>
+                <input id="replay-file" type="file" accept="application/json,.json" hidden>
+                <button type="button" class="button small" id="cancel-replay" hidden>停止回放</button>
+                <button type="button" class="button small" id="export-present-run" disabled>导出运行记录</button>
+              </div>
+              <output id="replay-result" class="live-detail" aria-live="polite"></output>
+              <ol id="event-list" class="event-list" aria-label="最近识别事件"></ol>
+            </section>
+          </section>
+        </div>
+        <div class="stage-footer"><a class="button ghost" href="#rehearse">返回试讲校准</a></div>
+      </section>
+      <div id="toast" class="toast" role="status" hidden></div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

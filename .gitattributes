@@ -1,3 +1,8 @@
 # Preserve the bytes recorded in the delivery manifests on every platform.
 * -text
 *.mp4 filter=lfs diff=lfs merge=lfs -text
+# Accept the line endings used by the integration delivery and the archived 4.1 copy.
+gesture-deck/** whitespace=cr-at-eol
+gesture-deck/public/gesture-engine/development-v41/recognizer-development.mjs whitespace=cr-at-eol,-blank-at-eof
+# The small generated marker example is included in ordinary source checkouts.
+gesture-deck/public/rehearsal-demo.mp4 -filter -diff -merge -text
