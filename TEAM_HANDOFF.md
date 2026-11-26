@@ -1,5 +1,7 @@
 # Human Project · 成员 2 接入与分工
 
+本文记录联调前的交接。当前入口和录制流程见[手势放映台](gesture-deck/README.md)。
+
 当前暂定流程已经在 Edge 走通原视频上传、读取意图标注、学习正反例、导出 A/B/C 实验包，再导入实验包对另一段视频回放。接下来成员 2 完成最终界面、用户流程和演示文稿播放器。成员 3 在整合后的版本上开展正式实验。
 
 ## 成员 3 的贡献
@@ -7,22 +9,22 @@
 - 在成员 1 的 MediaPipe 关键点提取和 DTW 基线上，完成自定义手势注册、双手同框追踪、较灵敏的掌心／手型分通道匹配，以及手势与功能绑定的接口。
 - 搭建视频校准流程。按带时间区间的意图标注自动截取可用正例和误触反例，记录来源，并将 A（初始示范）、B（补正例）、C（再补反例）冻结后回放。
 - 实现简版视频学习页及导出流程。用原始视频在浏览器逐步验证学习、导出、导入和评估，保存了可复核的运行结果。
-- 整理前期实验记录。P111 的既有视频复测中，原设置 A 命中 2/9，较灵敏 A 命中 7/9。B 与 C 命中 9/9，C 的误触由 B 的 8 次降到 3 次。这些数据用于交接时解释流程，正式实验数据在整合完成后另行采集。[P111 复测明细](P111_video_study/P111-study-report.md)
+- 整理前期实验记录。P111 的既有视频复测中，原设置 A 命中 2/9，较灵敏 A 命中 7/9。B 与 C 命中 9/9，C 的误触由 B 的 8 次降到 3 次。这些数据用于交接时解释流程，正式实验数据在整合完成后另行采集。[P111 复测明细](https://github.com/1078958340/human-project/blob/69d96270802ec0b8fee38a042b57a34726789c2c/P111_video_study/P111-study-report.md)
 
 ## 成员 2 从哪里接入
 
 | 用户环节 | 现有参考 | 最终界面要完成的内容 |
 | --- | --- | --- |
-| 注册与绑定 | [注册演示页](HAI_Part1交付包_v4.1/01_code/custom-gestures/index.html) | 让用户选择静态或短动态手势，完成录制、查看示范及绑定功能 |
-| 视频学习与回放 | [视频学习页](HAI_Part1交付包_v4.1/01_code/custom-gestures/video-study.html) | 组织视频、镜像、标注、进度、A/B/C 结果和导入导出 |
-| 演示发放 | [动作分发模块](HAI_Part1交付包_v4.1/01_code/custom-gestures/actions.mjs) | 把上一页、下一页接到真实播放器，展示暂停、恢复和页码边界 |
+| 注册与绑定 | [注册演示页](https://github.com/1078958340/human-project/blob/69d96270802ec0b8fee38a042b57a34726789c2c/HAI_Part1交付包_v4.1/01_code/custom-gestures/index.html) | 让用户选择静态或短动态手势，完成录制、查看示范及绑定功能 |
+| 视频学习与回放 | [视频学习页](https://github.com/1078958340/human-project/blob/69d96270802ec0b8fee38a042b57a34726789c2c/HAI_Part1交付包_v4.1/01_code/custom-gestures/video-study.html) | 组织视频、镜像、标注、进度、A/B/C 结果和导入导出 |
+| 演示发放 | [动作分发模块](https://github.com/1078958340/human-project/blob/69d96270802ec0b8fee38a042b57a34726789c2c/HAI_Part1交付包_v4.1/01_code/custom-gestures/actions.mjs) | 把上一页、下一页接到真实播放器，展示暂停、恢复和页码边界 |
 
 播放器可从 `createTracker` 和 `watchVideo` 得到帧，经 `createRecognizer(profile).push(frame)` 取得手势事件，再将有 `actionId` 的事件交给 `createActionDispatcher`。将 `nextPage` 和 `previousPage` 回调绑定到播放器。若已到首尾页，回调返回 `false` 以记录边界。用 `onEnabledChange` 更新暂停状态。切换来源和退出时释放追踪器与摄像头。
 
-视频学习页使用 `auto-study.mjs` 的 `calibrateStudy` 和 `evaluateStudy`。可以复用现成的 worker 和导出逻辑，由最终界面负责引导用户录制、标注和理解结果。新实验先用 `withSensitiveMatching` 给原示范配置应用较灵敏设置，再从这份配置生成 A、B、C。回放沿用实验包内冻结的配置。播放器收到判定时可分别记录识别时间、动作执行状态和页面实际呈现时间，便于成员 3 后续评估。[成员 2 的详细接口和代码示例](HAI_Part1交付包_v4.1/04_docs/成员2_接口接入.md)
+视频学习页使用 `auto-study.mjs` 的 `calibrateStudy` 和 `evaluateStudy`。可以复用现成的 worker 和导出逻辑，由最终界面负责引导用户录制、标注和理解结果。新实验先用 `withSensitiveMatching` 给原示范配置应用较灵敏设置，再从这份配置生成 A、B、C。回放沿用实验包内冻结的配置。播放器收到判定时可分别记录识别时间、动作执行状态和页面实际呈现时间，便于成员 3 后续评估。[成员 2 的详细接口和代码示例](https://github.com/1078958340/human-project/blob/69d96270802ec0b8fee38a042b57a34726789c2c/HAI_Part1交付包_v4.1/04_docs/成员2_接口接入.md)
 
 ## 后续安排
 
 1. 成员 2 完成界面和用户流程，接上播放器，并在协作分支上检查注册、绑定、翻页、暂停恢复、视频学习和导出。
 2. 团队联调一轮，确定演示任务和导出字段。成员 3 在最终版上记录系统版本、A/B/C 配置校验值、动作绑定和标注容差。
-3. 成员 3 采集新的命令轮和自然讲解轮。对同一批冻结数据回放 A/B/C，整理命中、漏检、误触、重复触发和播放器执行情况。若需要报告端到端延迟，同时记录人工起手和呈现时间。[标注与实验流程](HAI_Part1交付包_v4.1/04_docs/成员3_校准与实验.md)
+3. 成员 3 采集新的命令轮和自然讲解轮。对同一批冻结数据回放 A/B/C，整理命中、漏检、误触、重复触发和播放器执行情况。若需要报告端到端延迟，同时记录人工起手和呈现时间。[标注与实验流程](https://github.com/1078958340/human-project/blob/69d96270802ec0b8fee38a042b57a34726789c2c/HAI_Part1交付包_v4.1/04_docs/成员3_校准与实验.md)

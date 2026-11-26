@@ -1,5 +1,7 @@
 # Human Project：自定义动态手势与 Part 3 接手说明
 
+本文记录联调前的交接。当前入口和录制流程见[手势放映台](gesture-deck/README.md)。
+
 ## 当前实现（视频学习页与 P111 复测，2026-11-23）
 
 - `01_code/custom-gestures/video-study.html` 提供上传原视频、填写或导入标注、正反例学习、A/B/C 导出和冻结回放。较灵敏预设记录为 `channel-sensitive-v1`，按原始示范选择掌心或手型通道，同一实验内统一设置。
